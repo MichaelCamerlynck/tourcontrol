@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light+Two&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@700&family=Shadows+Into+Light+Two&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@700&display=swap');
+
+/* width */
+::-webkit-scrollbar {
+    width: 0.8rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    padding: 2px;
+    background: #091830;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #d0d0d0;
+}
+
+.hidden-scrollbar {
+    -ms-overflow-style: none;
+    /* Internet Explorer 10+ */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.hidden-scrollbar::-webkit-scrollbar {
+    display: none;
+    /* Safari and Chrome */
+}
+
+#homeHeader {
+    position: relative;
+    /* Ensure the pseudo-element's positioning is relative to this element */
+    background-image: url(../imgs/star.jpg);
+    background-size: cover;
+    /* Adjust the background image size to cover the element */
+}
+
+#part2 {
+    background: rgb(11, 10, 5);
+    background: linear-gradient(180deg, rgba(11, 10, 5, 1) 0%, rgba(9, 24, 48, 1) 55%, rgba(9, 24, 48, 1) 100%);
+}
+
+.t {
+    animation-name: scrool;
+    animation-duration: 7s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes scrool {
+    34% {
+        transform: translateY(-11.5rem);
+    }
+
+    40% {
+        transform: translateY(-10rem);
+    }
+
+    76% {
+        transform: translateY(-21.5rem);
+    }
+
+    80% {
+        transform: translateY(-20rem);
+    }
+
+    84% {
+        transform: translateY(-20rem);
+    }
+
+    90% {
+        transform: translateY(1.5rem);
+    }
+}
+
+#contactUs {
+    background: linear-gradient(to top, #73fffe 50%, #ff5d5d 50%);
+    background-size: 100% 200%;
+    transition: all 0.3s ease-in-out;
+}
+
+#contactUs:hover {
+    background-position: bottom;
+    color: #091830;
+}
+
+input, textarea {
+    font-family: "Work Sans" !important;
+}
+
+* {
+    scroll-behavior: smooth;
+}

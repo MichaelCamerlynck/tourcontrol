@@ -1,0 +1,58 @@
+{% load static %}
+<div class="fixed top-12 w-full">
+    <div class="flex flex-row justify-between items-center px-[3vw]">
+        <img class="w-auto h-[4rem]" src="{% static 'imgs/logo.png' %}" alt="">
+    
+        <div class="opacity-100 transition-all ease-in-out duration-700" id="navA">
+            <ul class="flex space-x-16 font-bold text-xl tracking-wide">
+                <li>
+                    <a href="">Home</a>
+                </li>
+                <li>
+                    <a href="">What We Do</a>
+                </li>
+                <li>
+                    <a href="">Our Story</a>
+                </li>
+                <li>
+                    <a href="">Blog</a>
+                </li>
+                <li>
+                    <a href="">Contact Us</a>
+                </li>
+            </ul>
+        </div>
+    
+        <div id="navB" class="opacity-0 transition-all ease-in-out duration-700" style="display: none;" data-status="open">
+            <button class="h-16 w-16 rounded-full bg-[#fefaf4] flex flex-col justify-center items-center relative">
+                <span id="line1" class="border-t-[2px] border-black w-[40%] btn-open transition-transform duration-500 absolute top-1/2 -translate-y-[0.3rem]"></span>
+                <span id="line2" class="border-t-[2px] border-black w-[40%] btn-open transition-transform duration-500 absolute top-1/2 translate-y-[0.3rem]"></span>
+                <i class="fa-solid fa-xmark text-black text-2xl btn-close hidden"></i>
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="h-screen fixed top-0 translate-x-[-40vw] w-[40vw] transition-all duration-500 ease-in-out bg-[#050c18] rounded-r z-50" id="navModal">
+
+    <div class="w-full h-full flex justify-center items-center">
+        <ul class="space-y-1 text-[5rem] font-bold uppercase tracking-tighter leading-none" id="navModalContent">
+            <li>
+                <a href="">Home</a>
+            </li>
+            <li>
+                <a href="">What We Do</a>
+            </li>
+            <li>
+                <a href="">Our Story</a>
+            </li>
+            <li>
+                <a href="">Blog</a>
+            </li>
+            <li>
+                <a href="">Contact Us</a>
+            </li>
+        </ul>
+    </div>
+
+</div>

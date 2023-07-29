@@ -1,0 +1,119 @@
+{% extends "base/base.html" %}
+{% load static %}
+{% block body_block %}
+
+<!-- <div id="preloader" class="h-screen flex justify-center items-center transition-all ease-in-out duration-[1000ms]">
+
+    <div class="h-[3rem] overflow-hidden">
+        <ul id="wordParent" class="font-[Montserrat] font-bold text-[2.6rem] tracking-widest uppercase text-center">
+            <li id="1">Strategy</li>
+            <li id="2" class="opacity-0 transition-all ease-in-out duration-[400ms]">Innovation</li>
+            <li id="3" class="opacity-0 transition-all ease-in-out duration-[400ms]">Marketing</li>
+            <li id="4" class="opacity-0 transition-all ease-in-out duration-[400ms]">Optimization</li>
+            <li id="5" class="opacity-0 transition-all ease-in-out duration-[400ms]">Growth</li>
+            <li id="6" class="opacity-0 transition-all ease-in-out duration-[400ms]">Technology</li>
+            <li id="7" class="opacity-0 transition-all ease-in-out duration-[400ms]">Insight</li>
+            <li id="8" class="opacity-0 transition-all ease-in-out duration-[400ms]">Solutions</li>
+            <li id="9" class="opacity-0 transition-all ease-in-out duration-[400ms]">Success</li>
+        </ul>
+    </div>
+
+</div> -->
+
+<div id="content" class="transition-all ease-in-out duration-[1500ms]" style="display: non;">
+
+    <header class="h-screen font-[Montserrat]" id="homeHeader">
+
+        {% include 'base/nav.html' %}
+
+        <div class="h-full flex flex-row items-center">
+            <h1 class="uppercase text-[4rem] font-bold leading-none ml-[10vw]">
+                <span class="block text-[9.5rem]">tourcontrol</span>
+                <span class="block">digital</span>
+                <span class="block">strategy</span>
+            </h1>
+
+            <div class="pb-[31vh] ml-8 space-x-1">
+                <span class="inline-block h-3 w-3 rounded-full bg-[#ff5d5d]"></span>
+                <span class="inline-block h-3 w-3 rounded-full bg-[#f887ff]"></span>
+                <span class="inline-block h-3 w-3 rounded-full bg-[#73fffe]"></span>
+            </div>
+        </div>
+
+    </header>
+
+    <div class="h-screen font-[Montserrat]" id="part2">
+
+        <div class="flex flex-col justify-center items-center h-full">
+            <h2 class="uppercase font-bold text-[4rem] text-center leading-[1]">
+                <span class="block">
+                    unlock your
+                </span>
+                <span class="block">
+                    perfect
+                </span>
+                <span class="block">
+                    marketing strategy
+                </span>
+            </h2>
+
+            <h3 class="text-2xl tracking-wide mt-5 text-center font-[500]">
+                <span class="block">We help tailor you the solution for</span>
+                <span class="block">this new digital age.</span>
+            </h3>
+
+            <div class="border-l-2 border-[#fefaf4] h-[30vh] mt-10"></div>
+
+            <h3 class="uppercase font-bold mt-10">discover how we do it</h3>
+        </div>
+
+    </div>
+
+    <div class="h-screen font-[Montserrat] bg-[#091830]">
+
+    
+
+    </div>
+
+    <div class="h-screen bg-red-50"></div>
+</div>
+
+<!-- <script>
+    function hideWord(word) {
+        $("#wordParent").find(":first-child").remove()
+        $("#wordParent").find(":first-child").removeClass("opacity-0")
+    }
+
+    function showPage() {
+        $("#preloader").addClass('-translate-y-[100vh]')
+        $("#content").show()
+        $("#content").addClass('-translate-y-[100vh]')
+
+        setTimeout(function(){
+            $("#content").removeClass('transition-all ease-in-out duration-[1500ms]')  
+        }, 1400) 
+
+        setTimeout(function(){
+            $("#preloader").hide()
+            $("#content").removeClass('-translate-y-[100vh]') 
+        }, 1500) 
+    }
+
+    $("window").ready(function() {
+        const delay = 400
+        let counter = 0
+        const intervalId = setInterval(function() {
+            hideWord()
+            counter++
+
+            if (counter === 8) {
+                clearInterval(intervalId)
+            }
+        }, delay)
+
+        setTimeout(showPage, delay * 10)
+    })
+
+</script> -->
+
+{% endblock %}

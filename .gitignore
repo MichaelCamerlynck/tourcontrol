@@ -136,7 +136,6 @@ GitHub.sublime-settings
 !.vscode/launch.json
 !.vscode/extensions.json
 .history
-portfolio/settings.py
 sql/tables.txt
 sql/*
 media/profile_pictures/mdvmefeejg331.jpg

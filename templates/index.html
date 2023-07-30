@@ -1,7 +1,7 @@
 {% extends "base/base.html" %}
 {% load static %}
 {% block body_block %}
-<!-- 
+
 <div id="preloader" class="h-screen flex justify-center items-center transition-all ease-in-out duration-[1000ms]">
 
     <div class="h-[3rem] overflow-hidden">
@@ -18,9 +18,9 @@
         </ul>
     </div>
 
-</div> -->
+</div>
 
-<div id="content" class="transition-all ease-in-out duration-[1500ms] overflow-x-hidden" style="display: non;">
+<div id="content" class="transition-all ease-in-out duration-[1500ms] overflow-x-hidden" style="display: none;">
 
     <header class="h-screen font-[Montserrat]">
 
@@ -359,7 +359,7 @@
     });
 </script>
 
-<!-- <script>
+<script>
     function hideWord(word) {
         $("#wordParent").find(":first-child").remove()
         $("#wordParent").find(":first-child").removeClass("opacity-0")
@@ -395,6 +395,6 @@
         setTimeout(showPage, delay * 10)
     })
 
-</script> -->
+</script>
 
 {% endblock %}

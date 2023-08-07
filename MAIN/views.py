@@ -12,29 +12,20 @@ class IndexView(TemplateView):
 
         context["title"] = "Tourcontrol Consulting"
         context["year"] = datetime.datetime.now().year
+        context["splash"] = True
 
         return context
    
 
-class IndexView2(TemplateView):
-   template_name = "index2.html"
+class IndexHomeView(TemplateView):
+   template_name = "index.html"
 
    def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
 
-        context["title"] = "Tourcontrol"
+        context["title"] = "Tourcontrol Consulting"
         context["year"] = datetime.datetime.now().year
-
-        return context
-
-class IndexView3(TemplateView):
-   template_name = "index3.html"
-
-   def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-
-        context["title"] = "Tourcontrol"
-        context["year"] = datetime.datetime.now().year
+        context["splash"] = False
 
         return context
    

@@ -2,6 +2,8 @@ from django.views.generic import TemplateView
 import datetime
 from django.http import JsonResponse
 import requests
+from django.core.mail import EmailMultiAlternatives
+from django.template.loader import render_to_string
 
 
 # Create your views here.
@@ -41,7 +43,15 @@ class Contact(TemplateView):
         context["year"] = datetime.datetime.now().year
 
         return context
-   
+
+
+def send_email_to_user(receiver, subject, context, template):
+    sender = 'tourcontrol.system@gmail.com'
+    html_content = render_to_string(template, context)
+    email = EmailMultiAlternatives(subject, 'This is the plain text version of the email.', sender, [receiver])
+    email.attach_alternative(html_content, 'text/html')
+    email.send()
+
 
 def send(request):
    name = request.GET["name"]
@@ -66,5 +76,19 @@ def send(request):
 
    url = "https://discord.com/api/webhooks/1141008820395581470/wnS4sh54LNr-68Kjx4ED7CWDyWsJoi_IYvx76YOLVMnKrxDviP-zRHHRURTZDAOUlL1G"
    requests.post(url, json=data)
+
+   receiver = "camerlynck.michael@outlook.com" #TODO change to proper email
+   context = {
+        "name": name,
+        "email" : email,
+        "topic" : topic,
+        "message" : message
+    }
+   template = "email.html"
+   
+#    send_email_to_user(receiver, topic, context, template)
+
+
+
 
    return JsonResponse({"data" : "success"}, status=200)

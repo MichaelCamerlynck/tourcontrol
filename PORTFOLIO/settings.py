@@ -47,6 +47,14 @@ INTERNAL_IPS = [
 if platform.system() == 'Windows':
     NPM_BIN_PATH = "C:\Program Files\\nodejs\\npm.cmd"
 
+# Email
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'tourcontrol.system@gmail.com'
+EMAIL_HOST_PASSWORD = 'ovihpwuzmiasslws'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
 
 # Application definition
 

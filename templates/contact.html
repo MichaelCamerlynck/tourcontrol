@@ -31,13 +31,13 @@
                     <div class="lg:flex lg:flex-row">
                         <div class="lg:basis-1/2 flex flex-col lg:mr-5 mt-8 lg:mt-0">
                             <label for="" class="uppercase font-[300] lg:text-lg text-[#fefaf4]">Name*</label>
-                            <input type="text" name="name" id="name"
+                            <input type="text" name="name" id="name" required
                                 class="bg-[#091830] border-b-2 border-x-0 border-t-0 outline-none border-[#ff5d5d] px-0 focus:ring-0 focus:border-[#ff5d5d] text-[#fefaf4]">
                         </div>
 
                         <div class="lg:basis-1/2 flex flex-col mt-8 lg:mt-0">
                             <label for="email" class="uppercase font-[300] lg:text-lg text-[#fefaf4]">E-mail*</label>
-                            <input type="email" name="email" id="email"
+                            <input type="email" name="email" id="email" required
                                 class="bg-[#091830] border-b-2 border-x-0 border-t-0 outline-none border-[#ff5d5d] px-0 focus:ring-0 focus:border-[#ff5d5d] text-[#fefaf4]">
                         </div>
                     </div>
@@ -45,7 +45,7 @@
                     <div class="lg:flex lg:flex-row lg:mt-[8vh]">
                         <div class="lg:basis-1/2 flex flex-col mr-5 mt-8 lg:mt-0">
                             <label for="topic" class="uppercase font-[300] lg:text-lg text-[#fefaf4]">Topic*</label>
-                            <input type="text" name="topic" id="topic"
+                            <input type="text" name="topic" id="topic" required
                                 class="bg-[#091830] border-b-2 border-x-0 border-t-0 outline-none border-[#ff5d5d] px-0 focus:ring-0 focus:border-[#ff5d5d] text-[#fefaf4]">
                         </div>
 
@@ -60,22 +60,32 @@
                     <div class="flex lg:mt-[8vh] mt-8">
                         <div class="flex flex-col w-full">
                             <label for="message" class="uppercase font-[300] lg:text-lg text-[#fefaf4]">Message*</label>
-                            <textarea type="text" name="message" id="message" rows=""
+                            <textarea type="text" name="message" id="message" rows="" required
                                 class="bg-[#091830] border-b-2 border-x-0 border-t-0 text-[#fefaf4] outline-none border-[#ff5d5d] px-0 focus:ring-0 focus:border-[#ff5d5d] w-full"></textarea>
                         </div>
                     </div>
 
-                    <button id="contactUs"
-                        class="uppercase mt-10 px-5 py-2 text-lg flex justify-between rounded-[3rem] lg:w-[8vw]">
-                        <p class="tracking-wider my-auto">submit</p>
-                        <div class="flex my-auto hidden lg:block">
-                            <span
-                                class="h-3 w-3 rounded-full bg-[#091830] my-auto flex justify-center items-center transition-all duration-300">
-                                <i
-                                    class="fa-solid fa-arrow-up rotate-90 text-sm opacity-0 transition-opacity duration-300 text-[#fefaf4]"></i>
-                            </span>
+                    <div class="flex mt-10">
+                        <button id="contactUs"
+                            class="uppercase px-5 py-2 text-lg flex justify-between rounded-[3rem] lg:w-[8vw]">
+                            <p class="tracking-wider my-auto">submit</p>
+                            <div class="flex my-auto hidden lg:block">
+                                <span
+                                    class="h-3 w-3 rounded-full bg-[#091830] my-auto flex justify-center items-center transition-all duration-300">
+                                    <i
+                                        class="fa-solid fa-arrow-up rotate-90 text-sm opacity-0 transition-opacity duration-300 text-[#fefaf4]"></i>
+                                </span>
+                            </div>
+                        </button>
+
+                        <div class="my-auto px-5 py-2">
+                            <div id="successMessage" class="hidden">Message Sent!</div>
+                            <div id="failMessage" class="hidden text-sm">Message failed to send, please try again or contact us directly at INQUIRY@TOURCONTROL.AGENCY
+                            </div>
+                            <div id="loadingMessage" class="hidden"><i class="fa-solid fa-spinner animate-spin"></i></div>
                         </div>
-                    </button>
+                    </div>
+
                 </form>
 
                 <div class="mb-[2rem] lg:mt-0 mt-[5vh]">
@@ -99,6 +109,8 @@
     $("form").submit(function (e) {
         e.preventDefault()
 
+        $("#loadingMessage").show()
+
         const data = {
             name: $("#name").val(),
             email: $("#email").val(),
@@ -113,7 +125,12 @@
             data: data,
             success: function (response) {
                 $('form')[0].reset()
-                console.log("test")
+                $("#loadingMessage").hide()
+                $("#successMessage").show()
+            },
+            fail: function(response) {
+                $("#loadingMessage").hide()
+                $("#failMessage").show()
             }
         })
     })

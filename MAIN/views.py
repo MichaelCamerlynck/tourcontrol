@@ -1,6 +1,7 @@
 from django.views.generic import TemplateView
 import datetime
-
+from django.http import JsonResponse
+import requests
 
 
 # Create your views here.
@@ -41,3 +42,29 @@ class Contact(TemplateView):
 
         return context
    
+
+def send(request):
+   name = request.GET["name"]
+   email = request.GET["email"]
+   topic = request.GET["topic"]
+   tel = request.GET["tel"]
+   message = request.GET["message"]
+
+   formatted_message =  f"@everyone\n" \
+                        f"```\n" \
+                        f"Name: {name} \n" \
+                        f"Email: {email} \n" \
+                        f"Topic: {topic}\n" \
+                        f"Phone Number: {tel}\n\n" \
+                        f"Message: \n" \
+                        f"{message}\n" \
+                        f"```"
+
+   data = {
+        "content": formatted_message
+    }
+
+   url = "https://discord.com/api/webhooks/1141008820395581470/wnS4sh54LNr-68Kjx4ED7CWDyWsJoi_IYvx76YOLVMnKrxDviP-zRHHRURTZDAOUlL1G"
+   requests.post(url, json=data)
+
+   return JsonResponse({"data" : "success"}, status=200)

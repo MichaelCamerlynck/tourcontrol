@@ -30,14 +30,14 @@
                 <form action="">
                     <div class="lg:flex lg:flex-row">
                         <div class="lg:basis-1/2 flex flex-col lg:mr-5 mt-8 lg:mt-0">
-                            <label for="name" class="uppercase font-[300] lg:text-lg text-[#fefaf4]">Name*</label>
-                            <input type="text" name="name" id="nameInput"
+                            <label for="" class="uppercase font-[300] lg:text-lg text-[#fefaf4]">Name*</label>
+                            <input type="text" name="name" id="name"
                                 class="bg-[#091830] border-b-2 border-x-0 border-t-0 outline-none border-[#ff5d5d] px-0 focus:ring-0 focus:border-[#ff5d5d] text-[#fefaf4]">
                         </div>
 
                         <div class="lg:basis-1/2 flex flex-col mt-8 lg:mt-0">
                             <label for="email" class="uppercase font-[300] lg:text-lg text-[#fefaf4]">E-mail*</label>
-                            <input type="email" name="email" id="emailInput"
+                            <input type="email" name="email" id="email"
                                 class="bg-[#091830] border-b-2 border-x-0 border-t-0 outline-none border-[#ff5d5d] px-0 focus:ring-0 focus:border-[#ff5d5d] text-[#fefaf4]">
                         </div>
                     </div>
@@ -45,36 +45,34 @@
                     <div class="lg:flex lg:flex-row lg:mt-[8vh]">
                         <div class="lg:basis-1/2 flex flex-col mr-5 mt-8 lg:mt-0">
                             <label for="topic" class="uppercase font-[300] lg:text-lg text-[#fefaf4]">Topic*</label>
-                            <input type="text" name="topic" id="topicInput"
+                            <input type="text" name="topic" id="topic"
                                 class="bg-[#091830] border-b-2 border-x-0 border-t-0 outline-none border-[#ff5d5d] px-0 focus:ring-0 focus:border-[#ff5d5d] text-[#fefaf4]">
                         </div>
 
                         <div class="lg:basis-1/2 flex flex-col mt-8 lg:mt-0">
-                            <label for="email" class="uppercase font-[300] lg:text-lg text-[#fefaf4]">Phone
+                            <label for="tel" class="uppercase font-[300] lg:text-lg text-[#fefaf4]">Phone
                                 Number</label>
-                            <input type="tel" name="tel" id="telInput"
+                            <input type="tel" name="tel" id="tel"
                                 class="bg-[#091830] border-b-2 border-x-0 border-t-0 outline-none border-[#ff5d5d] px-0 focus:ring-0 focus:border-[#ff5d5d] text-[#fefaf4]">
                         </div>
                     </div>
 
                     <div class="flex lg:mt-[8vh] mt-8">
                         <div class="flex flex-col w-full">
-                            <label for="topic" class="uppercase font-[300] lg:text-lg text-[#fefaf4]">Message*</label>
-                            <textarea type="text" name="message" id="messageInput" rows=""
+                            <label for="message" class="uppercase font-[300] lg:text-lg text-[#fefaf4]">Message*</label>
+                            <textarea type="text" name="message" id="message" rows=""
                                 class="bg-[#091830] border-b-2 border-x-0 border-t-0 text-[#fefaf4] outline-none border-[#ff5d5d] px-0 focus:ring-0 focus:border-[#ff5d5d] w-full"></textarea>
                         </div>
                     </div>
-
-                    <!-- <button class="mt-[5vh] uppercase rounded-3xl border-[#ff5d5d] border-2 px-5 py-1">
-                        submit
-                    </button> -->
 
                     <button id="contactUs"
                         class="uppercase mt-10 px-5 py-2 text-lg flex justify-between rounded-[3rem] lg:w-[8vw]">
                         <p class="tracking-wider my-auto">submit</p>
                         <div class="flex my-auto hidden lg:block">
-                            <span class="h-3 w-3 rounded-full bg-[#091830] my-auto flex justify-center items-center transition-all duration-300">
-                                <i class="fa-solid fa-arrow-up rotate-90 text-sm opacity-0 transition-opacity duration-300 text-[#fefaf4]"></i>
+                            <span
+                                class="h-3 w-3 rounded-full bg-[#091830] my-auto flex justify-center items-center transition-all duration-300">
+                                <i
+                                    class="fa-solid fa-arrow-up rotate-90 text-sm opacity-0 transition-opacity duration-300 text-[#fefaf4]"></i>
                             </span>
                         </div>
                     </button>
@@ -97,6 +95,28 @@
     })
 
     $("#secondaryFooter").hide()
+
+    $("form").submit(function (e) {
+        e.preventDefault()
+
+        const data = {
+            name: $("#name").val(),
+            email: $("#email").val(),
+            topic: $("#topic").val(),
+            tel: $("#tel").val(),
+            message: $("#message").val()
+        }
+
+        $.ajax({
+            type: "GET",
+            url: "{% url 'send' %}",
+            data: data,
+            success: function (response) {
+                $('form')[0].reset()
+                console.log("test")
+            }
+        })
+    })
 </script>
 
 

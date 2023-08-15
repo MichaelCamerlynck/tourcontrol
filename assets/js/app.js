@@ -1,32 +1,46 @@
 // toggles navbar when scrolled
 $(document).on('scroll', function () {
-    if (window.scrollY >= 100) {
-        $("#navB").show()
-        $("#navB").removeClass("opacity-0")
-        $("#navB").addClass("opacity-100")
-
-        $("#navA").hide()
-        $("#navA").addClass("opacity-0")
-        $("#navA").removeClass("opacity-100")
-    } else {
-        $("#navA").show()
-        $("#navA").removeClass("opacity-0")
-        $("#navA").addClass("opacity-100")
-
-        $("#navB").hide()
-        $("#navB").addClass("opacity-0")
-        $("#navB").removeClass("opacity-100")
-
-        $("#navModal").addClass('translate-x-[-40vw]')
-        $(this).data("status", "open")
-        $("#line1").removeClass("-rotate-45").addClass("-translate-y-[0.3rem]")
-        $("#line2").removeClass("rotate-45").addClass("translate-y-[0.3rem]")
+    if (!isMobile()) {
+        if (window.scrollY >= 100) {
+            hideFullNav()
+        } else {
+            showFullNav()
+        }
     }
 })
 
+function showFullNav() {
+    $("#navA").show()
+    $("#navA").removeClass("opacity-0")
+    $("#navA").addClass("opacity-100")
+
+    $("#navB").hide()
+    $("#navB").addClass("opacity-0")
+    $("#navB").removeClass("opacity-100")
+
+    $("#navModal").addClass('lg:translate-x-[-40vw]')
+    $(this).data("status", "open")
+    $("#line1").removeClass("-rotate-45").addClass("-translate-y-[0.3rem]")
+    $("#line2").removeClass("rotate-45").addClass("translate-y-[0.3rem]")
+}
+
+function hideFullNav() {
+    $("#navB").show()
+    $("#navB").removeClass("opacity-0")
+    $("#navB").addClass("opacity-100")
+
+    $("#navA").hide()
+    $("#navA").addClass("opacity-0")
+    $("#navA").removeClass("opacity-100")
+}
+
 // toggles expanding navbar
 $("#navB").click(function () {
-    $("#navModal").toggleClass('translate-x-[-40vw]')
+    if (isMobile()) {
+        $("#navModal").toggleClass('translate-x-[-60vw]')
+    } else {
+        $("#navModal").toggleClass('lg:translate-x-[-40vw] translate-x-[-60vw]')
+    }
 
     if ($(this).data("status") === "open") {
         $(this).data("status", "closed")
@@ -44,6 +58,7 @@ $("#mainFooter").mouseenter(function () {
     mouseOnFooter = true
     $("#secondaryFooter").show().removeClass("translate-x-[4rem] opacity-0")
 })
+
 $("#mainFooter").mouseleave(function () {
     mouseOnFooter = false
     if (!isNearBottom()) {
@@ -69,12 +84,20 @@ function isNearBottom() {
     return (distanceFromBottom / documentHeight) < thresholdPercentage;
 }
 
-if (isNearBottom()) {
+function isMobile() {
+    return window.innerWidth <= 768
+}
+
+if (isNearBottom() && window.location.href.indexOf("contact") === -1) {
     $("#secondaryFooter").show().removeClass("translate-x-[4rem] opacity-0")
 }
 
+if (isMobile()) {
+    hideFullNav()
+}
+
 $(window).scroll(function () {
-    if (isNearBottom()) {
+    if (isNearBottom() && window.location.href.indexOf("contact") === -1) {
         $("#secondaryFooter").show().removeClass("translate-x-[4rem] opacity-0")
     } else {
         $("#secondaryFooter").addClass("translate-x-[4rem] opacity-0")
@@ -109,4 +132,3 @@ $("#contactUs").mouseleave(function () {
     $("#circleContact").removeClass("scale-[2.9]")
     $("#arrowContact").addClass("opacity-0")
 })
- 

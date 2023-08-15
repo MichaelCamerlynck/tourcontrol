@@ -92,7 +92,8 @@ html {
     color: #091830;
 }
 
-input, textarea {
+input,
+textarea {
     font-family: "Work Sans" !important;
 }
 

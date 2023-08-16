@@ -1,0 +1,199 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-08-16 14:28+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: .\templates\base\nav.html:13 .\templates\base\nav.html:59
+msgid "Home"
+msgstr "Accueil"
+
+#: .\templates\base\nav.html:16 .\templates\base\nav.html:62
+msgid "What We Do"
+msgstr "Ce Que Nous Faisons"
+
+#: .\templates\base\nav.html:19 .\templates\base\nav.html:65
+msgid "Our Story"
+msgstr "Notre Histoire"
+
+#: .\templates\base\nav.html:22 .\templates\base\nav.html:68
+msgid "Blog"
+msgstr "Blog"
+
+#: .\templates\base\nav.html:25 .\templates\base\nav.html:71
+msgid "Contact Us"
+msgstr "Contactez-Nous"
+
+#: .\templates\index.html:88
+msgid "unlock your"
+msgstr "DÉBLOQUEZ VOTRE"
+
+#: .\templates\index.html:91
+msgid "perfect"
+msgstr "STRATÉGIE DE MARKETING"
+
+#: .\templates\index.html:94
+msgid "marketing strategy"
+msgstr "PARFAITE"
+
+#: .\templates\index.html:99
+msgid "We help tailor you the solution for"
+msgstr "Nous vous aidons à adapter la solution"
+
+#: .\templates\index.html:100
+msgid "this new digital age"
+msgstr "à cette nouvelle ère numérique"
+
+#: .\templates\index.html:106
+msgid "discover how we do it"
+msgstr "Découvrez Comment Nous Le Faisons"
+
+#: .\templates\index.html:126
+msgid "Versitile"
+msgstr ""
+
+#: .\templates\index.html:137
+msgid "Integrated"
+msgstr ""
+
+#: .\templates\index.html:148
+msgid "Empowered"
+msgstr ""
+
+#: .\templates\index.html:158 .\templates\index.html:188
+msgid ""
+"At Tourcontrol, our expertise extends across companies of all sizes, each "
+"seeking innovative and competitive digital solutions. From small startups to "
+"established enterprises, we've honed our skills in crafting customized "
+"strategies that propel businesses forward in the modern and fast-paced "
+"market. Let us help you unlock your full digital potential and navigate the "
+"ever-changing digital landscape with confidence."
+msgstr ""
+
+#: .\templates\index.html:164
+msgid ""
+"Explore the dynamic fusion of technologies, creative ideas, strategic "
+"concepts, and data-driven insights at Tourcontrol. Our innovative approach "
+"is designed to elevate your marketing campaigns to new heights. From "
+"refining your current strategies to developing a bespoke MarTech Core "
+"tailored to your unique business, we are dedicated to unleashing your "
+"brand's full potential. Experience the transformative power of seamless "
+"integration and unlock unprecedented success in the digital realm."
+msgstr ""
+
+#: .\templates\index.html:170 .\templates\index.html:219
+msgid ""
+"Step into the realm of limitless digital possibilities with Tourcontrol. Our "
+"expertise lies in crafting a robust and tailored media ecosystem that allows "
+"you to fully harness the power of modern digital marketing campaigns. "
+"Experience the transformative difference of our meticulous media setup and "
+"elevate your business to new heights in the digital landscape."
+msgstr ""
+
+#: .\templates\index.html:204
+msgid ""
+"Explore the dynamic fusion of technologies, creative ideas, strategic "
+"concepts, and data-driven  insights at Tourcontrol. Our innovative approach "
+"is designed to elevate your marketing campaigns to new heights. From "
+"refining your current strategies to developing a bespoke MarTech  Core "
+"tailored to your unique business, we are dedicated to unleashing your "
+"brand's full potential. Experience the transformative power of seamless "
+"integration and unlock unprecedented success in the digital realm."
+msgstr ""
+
+#: .\templates\index.html:234
+msgid "meet"
+msgstr ""
+
+#: .\templates\index.html:235
+msgid "the"
+msgstr ""
+
+#: .\templates\index.html:237
+msgid "team"
+msgstr ""
+
+#: .\templates\index.html:238
+msgid "crew"
+msgstr ""
+
+#: .\templates\index.html:239
+msgid "group"
+msgstr ""
+
+#: .\templates\index.html:243
+msgid "Meet the Team"
+msgstr ""
+
+#: .\templates\index.html:292
+msgid ""
+"We have over <span class='font-bold text-[#ff5d5d]'>20 years</span> of "
+"growth marketing and strategy combined together"
+msgstr ""
+
+#: .\templates\index.html:298
+msgid ""
+"At Tour Control, we pride ourselves on empowering numerous corporate "
+"entities with our seasoned expertise, guiding them on their transformative "
+"journey towards digital relevance. We understand that embracing "
+"digitalization and establishing a robust MarTech Core may have seemed like "
+"an insurmountable challenge for many, but together, we turn the impossible "
+"into a reality."
+msgstr ""
+
+#: .\templates\index.html:306
+msgid "Witness the"
+msgstr ""
+
+#: .\templates\index.html:307
+msgid "Success"
+msgstr ""
+
+#: .\templates\index.html:308
+msgid "Stories"
+msgstr ""
+
+#: .\templates\index.html:316
+msgid ""
+"Companies that took the leap are not only surviving but thriving in today's "
+"dynamic business landscape. We take pride in motivating them to embrace the "
+"digital revolution, and they continue to stand strong."
+msgstr ""
+
+#: .\templates\index.html:320
+msgid ""
+"Now, it's your turn to soar! Let's propel your business towards a brighter "
+"future by harnessing the power of digital transformation and unleashing its "
+"full potential. Don't miss this opportunity to thrive in the digital age - "
+"take that leap and secure your place among the digitally relevant elite."
+msgstr ""
+
+#: .\templates\index.html:329
+msgid "start your"
+msgstr ""
+
+#: .\templates\index.html:330
+msgid "digital journey"
+msgstr ""
+
+#: .\templates\index.html:331
+msgid "today"
+msgstr ""
+
+#: .\templates\index.html:336
+msgid "contact us"
+msgstr ""

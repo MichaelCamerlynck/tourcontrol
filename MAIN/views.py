@@ -1,9 +1,15 @@
 from django.views.generic import TemplateView
-import datetime
 from django.http import JsonResponse
-import requests
+from django.utils.translation import gettext as _
 from django.core.mail import EmailMultiAlternatives
+from django.urls import reverse
 from django.template.loader import render_to_string
+from django.conf import settings
+from django.utils import translation
+from django.http import HttpResponseRedirect
+
+import datetime
+import requests
 import os
 
 
@@ -44,6 +50,14 @@ class Contact(TemplateView):
         context["year"] = datetime.datetime.now().year
 
         return context
+
+
+def switch_language(request, language_code):
+    if language_code in [lang_code for lang_code, _ in settings.LANGUAGES]:
+        translation.activate(language_code)
+        response = HttpResponseRedirect(request.META.get('HTTP_REFERER', reverse('home')))
+        response.set_cookie(settings.LANGUAGE_COOKIE_NAME, language_code)
+        return response
 
 
 def send_email_to_user(receiver, subject, context, template):

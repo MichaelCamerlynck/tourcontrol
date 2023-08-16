@@ -1,58 +1,83 @@
 {% load static %}
+{% load i18n %}
 <div class="fixed lg:top-12 top-3 w-full">
+
     <div class="flex flex-row justify-between items-center px-[3vw]">
         <a href="{% url 'home' %}">
             <img class="w-auto h-[4rem] hidden lg:block" src="{% static 'imgs/logo.png' %}" alt="">
         </a>
-    
+
         <div id="navA" class="opacity-100 transition-all ease-in-out duration-700">
             <ul class="flex space-x-16 font-bold lg:text-xl tracking-wide">
-                <li>
-                    <a href="{% url 'home' %}">Home</a>
+                <li class="my-auto">
+                    <a href="{% url 'home' %}">{% trans "Home" %}</a>
+                </li>
+                <li class="my-auto">
+                    <a href="{% url 'home' %}#howwedoit">{% trans "What We Do" %}</a>
+                </li>
+                <li class="my-auto">
+                    <a href="{% url 'home' %}#ourstory">{% trans "Our Story" %}</a>
+                </li>
+                <li class="my-auto">
+                    <a href="{% url 'home' %}">{% trans "Blog" %}</a>
+                </li>
+                <li class="my-auto">
+                    <a href="{% url 'contact' %}">{% trans "Contact Us" %}</a>
                 </li>
                 <li>
-                    <a href="{% url 'home' %}#howwedoit">What We Do</a>
+                    <a href="{% url 'switch_language' 'en' %}">EN</a>
                 </li>
                 <li>
-                    <a href="{% url 'home' %}#ourstory">Our Story</a>
+                    <a href="{% url 'switch_language' 'nl' %}">NL</a>
                 </li>
                 <li>
-                    <a href="{% url 'home' %}">Blog</a>
-                </li>
-                <li>
-                    <a href="{% url 'contact' %}">Contact Us</a>
+                    <a href="{% url 'switch_language' 'fr' %}">FR</a>
                 </li>
             </ul>
         </div>
-    
-        <div id="navB" class="opacity-0 transition-all ease-in-out duration-700 z-[10000]" style="display: none;" data-status="open">
+
+        <div id="navB" class="opacity-0 transition-all ease-in-out duration-700 z-[10000]" style="display: none;"
+            data-status="open">
             <button class="h-16 w-16 rounded-full bg-[#fefaf4] flex flex-col justify-center items-center relative">
-                <span id="line1" class="border-t-[2px] border-black w-[40%] btn-open transition-transform duration-500 absolute top-1/2 -translate-y-[0.3rem]"></span>
-                <span id="line2" class="border-t-[2px] border-black w-[40%] btn-open transition-transform duration-500 absolute top-1/2 translate-y-[0.3rem]"></span>
+                <span id="line1"
+                    class="border-t-[2px] border-black w-[40%] btn-open transition-transform duration-500 absolute top-1/2 -translate-y-[0.3rem]"></span>
+                <span id="line2"
+                    class="border-t-[2px] border-black w-[40%] btn-open transition-transform duration-500 absolute top-1/2 translate-y-[0.3rem]"></span>
                 <i class="fa-solid fa-xmark text-black text-2xl btn-close hidden"></i>
             </button>
         </div>
     </div>
 </div>
 
-<div class="h-screen fixed top-0 lg:translate-x-[-40vw] translate-x-[-60vw] lg:w-[40vw] w-[60vw] transition-all duration-500 ease-in-out bg-[#050c18] rounded-r z-50" id="navModal">
+<div class="h-screen fixed top-0 lg:translate-x-[-40vw] translate-x-[-60vw] lg:w-[40vw] w-[60vw] transition-all duration-500 ease-in-out bg-[#050c18] rounded-r z-50"
+    id="navModal">
 
     <div class="w-full h-full flex justify-center items-center">
-        <ul class="lg:space-y-1 space-y-3 lg:text-[5rem] text-3xl font-bold uppercase tracking-tighter leading-none" id="navModalContent">
-            <li>
-                <a href="{% url 'home' %}">Home</a>
+        <ul class="lg:space-y-1 space-y-3 lg:text-[5rem] text-3xl font-bold uppercase tracking-tighter leading-none"
+            id="navModalContent">
+            <li class="my-auto">
+                <a href="{% url 'home' %}">{% trans "Home" %}</a>
+            </li>
+            <li class="my-auto">
+                <a href="{% url 'home' %}#howwedoit">{% trans "What We Do" %}</a>
+            </li>
+            <li class="my-auto">
+                <a href="{% url 'home' %}#ourstory">{% trans "Our Story" %}</a>
+            </li>
+            <li class="my-auto">
+                <a href="{% url 'home' %}">{% trans "Blog" %}</a>
+            </li>
+            <li class="my-auto">
+                <a href="{% url 'contact' %}">{% trans "Contact Us" %}</a>
             </li>
             <li>
-                <a href="{% url 'home' %}#howwedoit">What We Do</a>
+                <a href="{% url 'switch_language' 'en' %}">EN</a>
             </li>
             <li>
-                <a href="{% url 'home' %}#ourstory">Our Story</a>
+                <a href="{% url 'switch_language' 'nl' %}">NL</a>
             </li>
             <li>
-                <a href="{% url 'home' %}">Blog</a>
-            </li>
-            <li>
-                <a href="{% url 'contact' %}">Contact Us</a>
+                <a href="{% url 'switch_language' 'fr' %}">FR</a>
             </li>
         </ul>
     </div>

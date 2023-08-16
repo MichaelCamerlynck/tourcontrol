@@ -1,5 +1,6 @@
 {% extends "base/base.html" %}
 {% load static %}
+{% load i18n %}
 {% block body_block %}
 
 {% if splash %}
@@ -84,25 +85,25 @@
             <div class="flex flex-col justify-center items-center h-full">
                 <h2 class="uppercase font-bold lg:text-[4rem] text-[1.8rem] text-center leading-[1]">
                     <span class="block">
-                        unlock your
+                        {% trans "unlock your" %}
                     </span>
                     <span class="block">
-                        perfect
+                        {% trans "perfect" %}
                     </span>
                     <span class="block">
-                        marketing strategy
+                        {% trans "marketing strategy" %}
                     </span>
                 </h2>
 
                 <h3 class="lg:text-2xl text-base tracking-wide mt-5 text-center font-[500]">
-                    <span class="block">We help tailor you the solution for</span>
-                    <span class="block">this new digital age.</span>
+                    <span class="block">{% trans "We help tailor you the solution for" %}</span>
+                    <span class="block">{% trans "this new digital age" %}.</span>
                 </h3>
 
                 <div class="border-l-2 border-[#ff5d5d] h-[30vh] mt-10"></div>
 
                 <button class="uppercase font-bold mt-10" id="howWeDoIt">
-                    discover how we do it
+                    {% trans "discover how we do it" %}
                 </button>
             </div>
 
@@ -122,7 +123,7 @@
                                     <div class="translate-x-6 flex transition-transform duration-700">
                                         <i class="fa-solid fa-chevron-right my-auto text-xl hidden mr-3"></i>
                                         <i class="fa-solid fa-arrow-right mr-3 my-auto text-2xl"></i>
-                                        <p class="uppercase">Versitile</p>
+                                        <p class="uppercase">{% trans "Versitile" %}</p>
                                     </div>
                                 </button>
                             </li>
@@ -133,7 +134,7 @@
                                     <div class="flex transition-transform duration-700">
                                         <i class="fa-solid fa-chevron-right my-auto text-xl mr-3"></i>
                                         <i class="fa-solid fa-arrow-right mr-3 my-auto text-2xl hidden"></i>
-                                        <p class="uppercase">Integrated</p>
+                                        <p class="uppercase">{% trans "Integrated" %}</p>
                                     </div>
                                 </button>
                             </li>
@@ -144,7 +145,7 @@
                                     <div class="flex transition-transform duration-700">
                                         <i class="fa-solid fa-chevron-right my-auto text-xl mr-3"></i>
                                         <i class="fa-solid fa-arrow-right mr-3 my-auto text-2xl hidden"></i>
-                                        <p class="uppercase">Empowered</p>
+                                        <p class="uppercase">{% trans "Empowered" %}</p>
                                     </div>
                                 </button>
                             </li>
@@ -154,37 +155,19 @@
                         <p id="versitile"
                             class="text-xl tracking-wide leading-[1.7] text transition-opacity duration-700 my-auto"
                             style="font-family: 'Work Sans';">
-                            At Tourcontrol, our expertise extends across companies of all sizes, each seeking
-                            innovative and competitive digital solutions. From small startups to established
-                            enterprises,
-                            we've honed our skills in crafting customized strategies that propel businesses forward in
-                            the
-                            modern and fast-paced market. Let us help you unlock your full digital potential and
-                            navigate
-                            the ever-changing digital landscape with confidence.
+                            {% trans "At Tourcontrol, our expertise extends across companies of all sizes, each seeking innovative and competitive digital solutions. From small startups to established enterprises, we've honed our skills in crafting customized strategies that propel businesses forward in the modern and fast-paced market. Let us help you unlock your full digital potential and navigate the ever-changing digital landscape with confidence." %}
                         </p>
 
                         <p id="integrated"
                             class="text-xl tracking-wide leading-[1.7] text opacity-0 transition-opacity duration-700 my-auto"
                             style="font-family: 'Work Sans'; display: none;">
-                            Explore the dynamic fusion of technologies, creative ideas, strategic concepts, and
-                            data-driven
-                            insights at Tourcontrol. Our innovative approach is designed to elevate your marketing
-                            campaigns to new heights. From refining your current strategies to developing a bespoke
-                            MarTech
-                            Core tailored to your unique business, we are dedicated to unleashing your brand's full
-                            potential. Experience the transformative power of seamless integration and unlock
-                            unprecedented
-                            success in the digital realm.
+                            {% trans "Explore the dynamic fusion of technologies, creative ideas, strategic concepts, and data-driven insights at Tourcontrol. Our innovative approach is designed to elevate your marketing campaigns to new heights. From refining your current strategies to developing a bespoke MarTech Core tailored to your unique business, we are dedicated to unleashing your brand's full potential. Experience the transformative power of seamless integration and unlock unprecedented success in the digital realm." %}
                         </p>
 
                         <p id="empowered"
                             class="text-xl tracking-wide leading-[1.7] text opacity-0 transition-opacity duration-700 my-auto"
                             style="font-family: 'Work Sans'; display: none;">
-                            Step into the realm of limitless digital possibilities with Tourcontrol. Our expertise
-                            lies in crafting a robust and tailored media ecosystem that allows you to fully harness the
-                            power of modern digital marketing campaigns. Experience the transformative difference of our
-                            meticulous media setup and elevate your business to new heights in the digital landscape.
+                            {% trans "Step into the realm of limitless digital possibilities with Tourcontrol. Our expertise lies in crafting a robust and tailored media ecosystem that allows you to fully harness the power of modern digital marketing campaigns. Experience the transformative difference of our meticulous media setup and elevate your business to new heights in the digital landscape." %}
                         </p>
                     </div>
 
@@ -202,15 +185,7 @@
 
                         <div class="lg:py-10 py-6 text-justify lg:text-lg">
                             <p class="tracking-wide my-auto" style="font-family: 'Work Sans';">
-                                At Tourcontrol, our expertise extends across companies of all sizes, each seeking
-                                innovative and competitive digital solutions. From small startups to established
-                                enterprises,
-                                we've honed our skills in crafting customized strategies that propel businesses forward
-                                in
-                                the
-                                modern and fast-paced market. Let us help you unlock your full digital potential and
-                                navigate
-                                the ever-changing digital landscape with confidence.
+                                {% trans "At Tourcontrol, our expertise extends across companies of all sizes, each seeking innovative and competitive digital solutions. From small startups to established enterprises, we've honed our skills in crafting customized strategies that propel businesses forward in the modern and fast-paced market. Let us help you unlock your full digital potential and navigate the ever-changing digital landscape with confidence." %}
                             </p>
                         </div>
                     </div>
@@ -226,15 +201,7 @@
 
                         <div class="lg:py-10 py-6 text-justify lg:text-lg">
                             <p class="tracking-wide my-auto" style="font-family: 'Work Sans';">
-                                Explore the dynamic fusion of technologies, creative ideas, strategic concepts, and
-                                data-driven
-                                insights at Tourcontrol. Our innovative approach is designed to elevate your marketing
-                                campaigns to new heights. From refining your current strategies to developing a bespoke
-                                MarTech
-                                Core tailored to your unique business, we are dedicated to unleashing your brand's full
-                                potential. Experience the transformative power of seamless integration and unlock
-                                unprecedented
-                                success in the digital realm.
+                                {% trans "Explore the dynamic fusion of technologies, creative ideas, strategic concepts, and data-driven  insights at Tourcontrol. Our innovative approach is designed to elevate your marketing campaigns to new heights. From refining your current strategies to developing a bespoke MarTech  Core tailored to your unique business, we are dedicated to unleashing your brand's full potential. Experience the transformative power of seamless integration and unlock unprecedented success in the digital realm." %}
                             </p>
                         </div>
                     </div>
@@ -249,13 +216,7 @@
 
                         <div class="lg:py-10 py-6 text-justify lg:text-lg">
                             <p class="tracking-wide my-auto" style="font-family: 'Work Sans';">
-                                Step into the realm of limitless digital possibilities with Tourcontrol. Our expertise
-                                lies in crafting a robust and tailored media ecosystem that allows you to fully harness
-                                the
-                                power of modern digital marketing campaigns. Experience the transformative difference of
-                                our
-                                meticulous media setup and elevate your business to new heights in the digital
-                                landscape.
+                                {% trans "Step into the realm of limitless digital possibilities with Tourcontrol. Our expertise lies in crafting a robust and tailored media ecosystem that allows you to fully harness the power of modern digital marketing campaigns. Experience the transformative difference of our meticulous media setup and elevate your business to new heights in the digital landscape." %}
                             </p>
                         </div>
                     </div>
@@ -270,16 +231,16 @@
                     class="lg:basis-1/2 lg:flex lg:flex-col lg:items-end justify-center lg:text-right text-center z-10 relative">
                     <h2
                         class="uppercase font-bold text-[10rem] leading-none tracking-tight text-[#ff5d5d] hidden lg:block">
-                        <span class="block">meet</span>
-                        <span class="block">the</span>
+                        <span class="block">{% trans "meet" %}</span>
+                        <span class="block">{% trans "the" %}</span>
                         <span class="block h-[10rem] overflow-hidden">
-                            <p class="t">team</p>
-                            <p class="t">crew</p>
-                            <p class="t">group</p>
+                            <p class="t">{% trans "team" %}</p>
+                            <p class="t">{% trans "crew" %}</p>
+                            <p class="t">{% trans "group" %}</p>
                         </span>
                     </h2>
                     <h2 class="lg:hidden font-bold text-3xl text-[#ff5d5d] uppercase mb-5 mt-[15vh]">
-                        Meet the Team
+                        {% trans "Meet the Team" %}
                     </h2>
                 </div>
 
@@ -328,19 +289,13 @@
 
             <div>
                 <h4 class="text-center uppercase mt-10 lg:text-[1.8rem] text-2xl">
-                    We have over <span class="font-bold text-[#ff5d5d]">20 years</span> of growth marketing and strategy
-                    combined together
+                    {% trans "We have over <span class='font-bold text-[#ff5d5d]'>20 years</span> of growth marketing and strategy combined together" %}
                 </h4>
             </div>
 
             <div class="mt-[7vh]" style="font-family: 'Work Sans';">
                 <p class="lg:px-[30vw] lg:text-lg px-10 text-justify lg:text-left">
-                    At Tour Control, we pride ourselves on empowering numerous corporate entities with our seasoned
-                    expertise, guiding them on their transformative journey towards digital relevance. We understand
-                    that
-                    embracing digitalization and establishing a robust MarTech Core may have seemed like an
-                    insurmountable
-                    challenge for many, but together, we turn the impossible into a reality.
+                    {% trans "At Tour Control, we pride ourselves on empowering numerous corporate entities with our seasoned expertise, guiding them on their transformative journey towards digital relevance. We understand that embracing digitalization and establishing a robust MarTech Core may have seemed like an insurmountable challenge for many, but together, we turn the impossible into a reality." %}
                 </p>
             </div>
 
@@ -348,9 +303,9 @@
 
         <div class="h-screen flex flex-col justify-center items-center lg:mt-[20vh] mt-[10vh]">
             <h2 class="uppercase font-[800] lg:text-[9rem] text-[2.5rem] leading-none">
-                <span class="block">Witness the </span>
-                <span class="block -ml-[8vw] text-[#ff5d5d] italic">Success</span>
-                <span class="block">Stories</span>
+                <span class="block">{% trans "Witness the" %} </span>
+                <span class="block -ml-[8vw] text-[#ff5d5d] italic">{% trans "Success" %}</span>
+                <span class="block">{% trans "Stories" %}</span>
             </h2>
 
             <div class="flex lg:flex-row mt-10 lg:px-[15vw]">
@@ -358,19 +313,11 @@
                 <div class="lg:basis-1/2">
                     <p class="lg:text-lg tracking-wide lg:px-0 px-10 lg:text-left text-justify"
                         style="font-family: 'Work Sans';">
-                        Companies that took the leap are not only surviving but thriving in today's dynamic business
-                        landscape. We take pride in motivating them to embrace the digital revolution, and they continue
-                        to
-                        stand strong.
+                        {% trans "Companies that took the leap are not only surviving but thriving in today's dynamic business landscape. We take pride in motivating them to embrace the digital revolution, and they continue to stand strong." %}
                     </p>
                     <p class="lg:text-lg tracking-wide lg:px-0 px-10 lg:text-left text-justify mt-3"
                         style="font-family: 'Work Sans';">
-                        Now, it's your turn to soar! Let's propel your business towards a brighter future by harnessing
-                        the
-                        power of digital transformation and unleashing its full potential. Don't miss this opportunity
-                        to
-                        thrive in the digital age - take that leap and secure your place among the digitally relevant
-                        elite.
+                        {% trans "Now, it's your turn to soar! Let's propel your business towards a brighter future by harnessing the power of digital transformation and unleashing its full potential. Don't miss this opportunity to thrive in the digital age - take that leap and secure your place among the digitally relevant elite." %}
                     </p>
                 </div>
             </div>
@@ -379,14 +326,14 @@
         <div class="h-screen font-[Montserrat] flex flex-col justify-center items-center">
 
             <h3 class="uppercase font-bold lg:text-[10rem] text-[3.5rem] leading-[1.1] text-center tracking-tight">
-                <span class="block">start your</span>
-                <span class="block">digital journey</span>
-                <span class="block">today!</span>
+                <span class="block">{% trans "start your" %}</span>
+                <span class="block">{% trans "digital journey" %}</span>
+                <span class="block">{% trans "today" %}!</span>
             </h3>
 
             <button id="contactUs"
                 class="uppercase mt-10 px-5 py-4 lg:text-3xl flex justify-between rounded-[3rem] lg:w-[17vw]">
-                <p class="font-[600] tracking-wider my-auto">contact us</p>
+                <p class="font-[600] tracking-wider my-auto">{% trans "contact us" %}</p>
                 <div class="hidden lg:block my-auto">
                     <span id="circleContact"
                         class="h-5 w-5 mr-3 rounded-full bg-[#091830] my-auto flex justify-center items-center transition-all duration-300">

@@ -24,15 +24,64 @@
                 <li class="my-auto">
                     <a href="{% url 'contact' %}">{% trans "Contact Us" %}</a>
                 </li>
-                <li>
-                    <a href="{% url 'switch_language' 'en' %}">EN</a>
+                <li class="my-auto relative" id="languageSelect">
+                    <button class="flex border rounded-3xl px-2 py-1 text-base space-x-1">
+                        <i class="fa-solid fa-earth-americas my-auto leading-none"></i>
+                        <p class="my-auto leading-none text-[1.02rem] uppercase">
+                            {% get_current_language as LANGUAGE_CODE %}
+                            {{ LANGUAGE_CODE }}
+                        </p>
+                    </button>
+                    <div class="border absolute top-7 w-full rounded-2xl bg-[#fefaf4] text-[#091830] opacity-0 transition-opacity duration-700" 
+                    style="display: none;" id="languageSelection">
+                        <ul class="text-center">
+                            <li>
+                                <a href="{% url 'switch_language' 'en' %}">EN</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'switch_language' 'nl' %}">NL</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'switch_language' 'fr' %}">FR</a>
+                            </li>
+                        </ul>
+                    </div>
                 </li>
-                <li>
-                    <a href="{% url 'switch_language' 'nl' %}">NL</a>
-                </li>
-                <li>
-                    <a href="{% url 'switch_language' 'fr' %}">FR</a>
-                </li>
+
+                <script>
+                    let mouseOnSelect = false
+
+                    $("#languageSelect").mouseenter(function() {
+                        mouseOnSelect = true
+                        $("#languageSelection").show().removeClass("opacity-0")
+                    })
+
+                    $("#languageSelect").mouseleave(function() {
+                        mouseOnSelect = false
+                        $("#languageSelection").addClass("opacity-0")
+                        setTimeout(function() {
+                            if (!mouseOnSelect) {
+                                $("#languageSelection").hide()
+                            }
+                        }, 700)
+                    })
+
+                    
+
+                </script>
+                <!-- <li class="my-auto">
+                    <ul class="flex justify-between space-x-2 text-base font-normal">
+                        <li>
+                            <a href="{% url 'switch_language' 'en' %}">EN</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'switch_language' 'nl' %}">NL</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'switch_language' 'fr' %}">FR</a>
+                        </li>
+                    </ul>
+                </li> -->
             </ul>
         </div>
 

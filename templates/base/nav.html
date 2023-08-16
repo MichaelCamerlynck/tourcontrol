@@ -1,9 +1,9 @@
 {% load static %}
 <div class="fixed lg:top-12 top-3 w-full">
     <div class="flex flex-row justify-between items-center px-[3vw]">
-        <div>
+        <a href="{% url 'home' %}">
             <img class="w-auto h-[4rem] hidden lg:block" src="{% static 'imgs/logo.png' %}" alt="">
-        </div>
+        </a>
     
         <div id="navA" class="opacity-100 transition-all ease-in-out duration-700">
             <ul class="flex space-x-16 font-bold lg:text-xl tracking-wide">

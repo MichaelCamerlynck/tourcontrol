@@ -4,6 +4,7 @@ from django.http import JsonResponse
 import requests
 from django.core.mail import EmailMultiAlternatives
 from django.template.loader import render_to_string
+import os
 
 
 # Create your views here.
@@ -75,9 +76,9 @@ def send(request):
     }
 
    url = "https://discord.com/api/webhooks/1141008820395581470/wnS4sh54LNr-68Kjx4ED7CWDyWsJoi_IYvx76YOLVMnKrxDviP-zRHHRURTZDAOUlL1G"
-   requests.post(url, json=data)
+   # requests.post(url, json=data)
 
-   receiver = "camerlynck.michael@outlook.com" #TODO change to proper email
+   receiver = os.getenv('SEND_EMAIL_TO')
    context = {
         "name": name,
         "email" : email,
@@ -86,9 +87,6 @@ def send(request):
     }
    template = "email.html"
    
-#    send_email_to_user(receiver, topic, context, template)
-
-
-
+   send_email_to_user(receiver, topic, context, template)
 
    return JsonResponse({"data" : "success"}, status=200)

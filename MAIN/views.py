@@ -56,6 +56,8 @@ def switch_language(request, language_code):
     if language_code in [lang_code for lang_code, _ in settings.LANGUAGES]:
         translation.activate(language_code)
         response = HttpResponseRedirect(request.META.get('HTTP_REFERER', reverse('home')))
+        if response.url[-1] == "/":
+            response = HttpResponseRedirect(reverse("home"))
         response.set_cookie(settings.LANGUAGE_COOKIE_NAME, language_code)
         return response
 

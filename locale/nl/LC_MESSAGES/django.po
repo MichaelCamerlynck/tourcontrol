@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-16 14:28+0200\n"
+"POT-Creation-Date: 2023-08-16 20:43+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,25 +18,81 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\templates\base\nav.html:13 .\templates\base\nav.html:59
+#: .\templates\base\nav.html:13 .\templates\base\nav.html:108
 msgid "Home"
 msgstr "Home"
 
-#: .\templates\base\nav.html:16 .\templates\base\nav.html:62
+#: .\templates\base\nav.html:16 .\templates\base\nav.html:111
 msgid "What We Do"
 msgstr "Wat Doen We"
 
-#: .\templates\base\nav.html:19 .\templates\base\nav.html:65
+#: .\templates\base\nav.html:19 .\templates\base\nav.html:114
 msgid "Our Story"
 msgstr "Ons Verhaal"
 
-#: .\templates\base\nav.html:22 .\templates\base\nav.html:68
+#: .\templates\base\nav.html:22 .\templates\base\nav.html:117
 msgid "Blog"
 msgstr "Blog"
 
-#: .\templates\base\nav.html:25 .\templates\base\nav.html:71
+#: .\templates\base\nav.html:25 .\templates\base\nav.html:120
 msgid "Contact Us"
 msgstr "Ons Contacteren"
+
+#: .\templates\contact.html:14
+#, fuzzy
+#| msgid "Contact Us"
+msgid "Contact"
+msgstr "Ons Contacteren"
+
+#: .\templates\contact.html:21
+#, fuzzy
+#| msgid "contact us"
+msgid "contact"
+msgstr "Contacteer ons"
+
+#: .\templates\contact.html:24
+msgid ""
+"EMPOWERING DIGITAL VISIONS, EMBRACING COLLABORATION. LET'S IGNITE YOUR "
+"ONLINE JOURNEY. REACH OUT TODAY!"
+msgstr "DIGITALE VISIES VERSTERKEN, SAMENWERKING OMARMEN. LATEN WE JOUW ONLINE REIS ONTSTEKEN. NEEM VANDAAG NOG CONTACT OP!"
+
+#: .\templates\contact.html:33
+msgid "Name"
+msgstr "Naam"
+
+#: .\templates\contact.html:39
+msgid "E-mail"
+msgstr ""
+
+#: .\templates\contact.html:47
+msgid "Topic"
+msgstr "Onderwerp"
+
+#: .\templates\contact.html:53
+msgid "Phone Number"
+msgstr "Telefoonnummer"
+
+#: .\templates\contact.html:61
+msgid "Message"
+msgstr "Bericht"
+
+#: .\templates\contact.html:70
+msgid "submit"
+msgstr "Verzenden"
+
+#: .\templates\contact.html:81
+msgid "Message Sent!"
+msgstr "Bericht Verzonden"
+
+#: .\templates\contact.html:82
+msgid ""
+"Message failed to send, please try again or contact us directly at "
+"INQUIRY@TOURCONTROL.AGENCY"
+msgstr "Bericht kon niet worden verzonden, probeer het opnieuw of neem rechtstreeks contact met ons op via INQUIRY@TOURCONTROL.AGENCY"
+
+#: .\templates\contact.html:91
+msgid "BUSINESS ENQUIRIES"
+msgstr "ZAKELIJKE VRAGEN"
 
 #: .\templates\index.html:88
 msgid "unlock your"
@@ -64,15 +120,15 @@ msgstr "Ontdek Hoe We Het Doen"
 
 #: .\templates\index.html:126
 msgid "Versitile"
-msgstr ""
+msgstr "Veelzijdig"
 
 #: .\templates\index.html:137
 msgid "Integrated"
-msgstr ""
+msgstr "Geïntegreerd"
 
 #: .\templates\index.html:148
 msgid "Empowered"
-msgstr ""
+msgstr "Bevoegd"
 
 #: .\templates\index.html:158 .\templates\index.html:188
 msgid ""
@@ -83,6 +139,14 @@ msgid ""
 "market. Let us help you unlock your full digital potential and navigate the "
 "ever-changing digital landscape with confidence."
 msgstr ""
+"Bij Tourcontrol strekt onze expertise zich uit over bedrijven van alle "
+"groottes, die allemaal op zoek zijn naar innovatieve en competitieve "
+"digitale oplossingen. Van kleine startups tot gevestigde ondernemingen, "
+"hebben we onze vaardigheden verfijnd in het creëren van op maat gemaakte "
+"strategieën die bedrijven vooruit helpen in de moderne en snel veranderende "
+"markt. Laat ons u helpen om uw volledige digitale potentieel te benutten en "
+"met vertrouwen door het voortdurend veranderende digitale landschap te "
+"navigeren."
 
 #: .\templates\index.html:164
 msgid ""
@@ -94,6 +158,14 @@ msgid ""
 "brand's full potential. Experience the transformative power of seamless "
 "integration and unlock unprecedented success in the digital realm."
 msgstr ""
+"Verken de dynamische samensmelting van technologieën, creatieve ideeën, "
+"strategische concepten en op data gebaseerde inzichten bij Tourcontrol. Onze "
+"innovatieve aanpak is ontworpen om je marketingcampagnes naar nieuwe hoogten "
+"te tillen. Van het verfijnen van je huidige strategieën tot het ontwikkelen "
+"van een op maat gemaakte MarTech Core die is afgestemd op jouw unieke "
+"bedrijf, wij zijn toegewijd om het volledige potentieel van je merk te "
+"ontketenen. Ervaar de transformerende kracht van naadloze integratie en "
+"ontgrendel ongekend succes in het digitale domein."
 
 #: .\templates\index.html:170 .\templates\index.html:219
 msgid ""
@@ -103,6 +175,12 @@ msgid ""
 "Experience the transformative difference of our meticulous media setup and "
 "elevate your business to new heights in the digital landscape."
 msgstr ""
+"Betreed het domein van onbegrensde digitale mogelijkheden met Tourcontrol. "
+"Onze expertise ligt in het creëren van een krachtig en op maat gemaakt "
+"mediasysteem dat je in staat stelt om de volledige kracht van moderne "
+"digitale marketingcampagnes te benutten. Ervaar het transformerende verschil "
+"van onze nauwkeurige mediasystemen en til je bedrijf naar nieuwe hoogten in "
+"het digitale landschap."
 
 #: .\templates\index.html:204
 msgid ""
@@ -114,18 +192,26 @@ msgid ""
 "brand's full potential. Experience the transformative power of seamless "
 "integration and unlock unprecedented success in the digital realm."
 msgstr ""
+"Verken de dynamische samensmelting van technologieën, creatieve ideeën, "
+"strategische concepten en data-gedreven inzichten bij Tourcontrol. Onze "
+"innovatieve aanpak is ontworpen om je marketingcampagnes naar nieuwe hoogten "
+"te tillen. Van het verfijnen van je huidige strategieën tot het ontwikkelen "
+"van een op maat gemaakte MarTech Core die afgestemd is op je unieke bedrijf, "
+"wij zijn toegewijd om het volledige potentieel van je merk te ontketenen. "
+"Ervaar de transformerende kracht van naadloze integratie en ontgrendel "
+"ongekend succes in het digitale domein."
 
 #: .\templates\index.html:234
 msgid "meet"
-msgstr ""
+msgstr "Ontmoet"
 
 #: .\templates\index.html:235
 msgid "the"
-msgstr ""
+msgstr "het"
 
 #: .\templates\index.html:237
 msgid "team"
-msgstr ""
+msgstr "team"
 
 #: .\templates\index.html:238
 msgid "crew"
@@ -133,17 +219,19 @@ msgstr ""
 
 #: .\templates\index.html:239
 msgid "group"
-msgstr ""
+msgstr "groep"
 
 #: .\templates\index.html:243
 msgid "Meet the Team"
-msgstr ""
+msgstr "Ontmoet het team"
 
 #: .\templates\index.html:292
 msgid ""
 "We have over <span class='font-bold text-[#ff5d5d]'>20 years</span> of "
 "growth marketing and strategy combined together"
 msgstr ""
+"Samen hebben we meer dan <span class='font-bold text-[#ff5d5d]'>20 jaar</"
+"span> aan groeimarketing en strategie"
 
 #: .\templates\index.html:298
 msgid ""
@@ -154,18 +242,24 @@ msgid ""
 "an insurmountable challenge for many, but together, we turn the impossible "
 "into a reality."
 msgstr ""
+"Bij Tour Control zijn we er trots op talloze bedrijfsentiteiten te "
+"versterken met onze doorgewinterde expertise. We begeleiden ze op hun "
+"transformatieve reis naar digitale relevantie. We begrijpen dat het omarmen "
+"van digitalisering en het opzetten van een robuuste MarTech Core voor velen "
+"als een onoverkomelijke uitdaging kan hebben geleken, maar samen maken we "
+"het onmogelijke werkelijkheid."
 
 #: .\templates\index.html:306
 msgid "Witness the"
-msgstr ""
+msgstr "Aanschouw de"
 
 #: .\templates\index.html:307
 msgid "Success"
-msgstr ""
+msgstr "succes"
 
 #: .\templates\index.html:308
 msgid "Stories"
-msgstr ""
+msgstr "verhalen"
 
 #: .\templates\index.html:316
 msgid ""
@@ -173,6 +267,10 @@ msgid ""
 "dynamic business landscape. We take pride in motivating them to embrace the "
 "digital revolution, and they continue to stand strong."
 msgstr ""
+"Bedrijven die de sprong hebben gewaagd, overleven niet alleen maar floreren "
+"in het dynamische zakelijke landschap van vandaag. We zijn er trots op hen "
+"te hebben gemotiveerd om de digitale revolutie te omarmen, en ze blijven "
+"standhouden."
 
 #: .\templates\index.html:320
 msgid ""
@@ -181,19 +279,24 @@ msgid ""
 "full potential. Don't miss this opportunity to thrive in the digital age - "
 "take that leap and secure your place among the digitally relevant elite."
 msgstr ""
+"Nu is het jouw beurt om te schitteren! Laten we jouw bedrijf voortstuwen "
+"naar een helderdere toekomst door de kracht van digitale transformatie te "
+"benutten en het volledige potentieel ervan te ontketenen. Mis deze kans niet "
+"om te gedijen in het digitale tijdperk - waag die sprong en verzeker je plek "
+"bij de digitaal relevante elite."
 
 #: .\templates\index.html:329
 msgid "start your"
-msgstr ""
+msgstr "begin vandaag nog"
 
 #: .\templates\index.html:330
 msgid "digital journey"
-msgstr ""
+msgstr "aan je digitale"
 
 #: .\templates\index.html:331
 msgid "today"
-msgstr ""
+msgstr "reis"
 
 #: .\templates\index.html:336
 msgid "contact us"
-msgstr ""
+msgstr "Contacteer ons"

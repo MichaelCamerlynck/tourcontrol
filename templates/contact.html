@@ -1,5 +1,6 @@
 {% extends "base/base.html" %}
 {% load static %}
+{% load i18n %}
 {% block body_block %}
 <div id="loading" class="bg-[#091830] h-screen w-screen fixed top-0 z-[100] transition-all duration-700"></div>
 
@@ -10,18 +11,17 @@
         {% include 'base/nav.html' %}
 
         <div class="absolute top-3 h-16 my-auto flex lg:hidden">
-            <h1 class="px-[3vw] font-bold uppercase text-5xl my-auto">Contact</h1>
+            <h1 class="px-[3vw] font-bold uppercase text-5xl my-auto">{% trans "Contact" %}</h1>
         </div>
 
         <div class="lg:flex lg:flex-row h-full px-[3vw] lg:pt-[11rem] pt-[15vh] pb-[7rem]">
 
             <div class="lg:basis-1/2 h-full hidden lg:block">
                 <div class="h-full flex flex-col justify-between">
-                    <h1 class="uppercase lg:text-[5rem] font-[500] leading-none">contact</h1>
+                    <h1 class="uppercase lg:text-[5rem] font-[500] leading-none">{% trans "contact" %}</h1>
 
                     <p class="w-1/2 text-xl">
-                        EMPOWERING DIGITAL VISIONS, EMBRACING COLLABORATION. LET'S IGNITE YOUR ONLINE JOURNEY. REACH OUT
-                        TODAY!
+                        {% trans "EMPOWERING DIGITAL VISIONS, EMBRACING COLLABORATION. LET'S IGNITE YOUR ONLINE JOURNEY. REACH OUT TODAY!" %}
                     </p>
                 </div>
             </div>
@@ -30,13 +30,13 @@
                 <form action="">
                     <div class="lg:flex lg:flex-row">
                         <div class="lg:basis-1/2 flex flex-col lg:mr-5 mt-8 lg:mt-0">
-                            <label for="" class="uppercase font-[300] lg:text-lg text-[#fefaf4]">Name*</label>
+                            <label for="" class="uppercase font-[300] lg:text-lg text-[#fefaf4]">{% trans "Name" %}*</label>
                             <input type="text" name="name" id="name" required
                                 class="bg-[#091830] border-b-2 border-x-0 border-t-0 outline-none border-[#ff5d5d] px-0 focus:ring-0 focus:border-[#ff5d5d] text-[#fefaf4]">
                         </div>
 
                         <div class="lg:basis-1/2 flex flex-col mt-8 lg:mt-0">
-                            <label for="email" class="uppercase font-[300] lg:text-lg text-[#fefaf4]">E-mail*</label>
+                            <label for="email" class="uppercase font-[300] lg:text-lg text-[#fefaf4]">{% trans "E-mail" %}*</label>
                             <input type="email" name="email" id="email" required
                                 class="bg-[#091830] border-b-2 border-x-0 border-t-0 outline-none border-[#ff5d5d] px-0 focus:ring-0 focus:border-[#ff5d5d] text-[#fefaf4]">
                         </div>
@@ -44,14 +44,13 @@
 
                     <div class="lg:flex lg:flex-row lg:mt-[8vh]">
                         <div class="lg:basis-1/2 flex flex-col lg:mr-5 mt-8 lg:mt-0">
-                            <label for="topic" class="uppercase font-[300] lg:text-lg text-[#fefaf4]">Topic*</label>
+                            <label for="topic" class="uppercase font-[300] lg:text-lg text-[#fefaf4]">{% trans "Topic" %}*</label>
                             <input type="text" name="topic" id="topic" required
                                 class="bg-[#091830] border-b-2 border-x-0 border-t-0 outline-none border-[#ff5d5d] px-0 focus:ring-0 focus:border-[#ff5d5d] text-[#fefaf4]">
                         </div>
 
                         <div class="lg:basis-1/2 flex flex-col mt-8 lg:mt-0">
-                            <label for="tel" class="uppercase font-[300] lg:text-lg text-[#fefaf4]">Phone
-                                Number</label>
+                            <label for="tel" class="uppercase font-[300] lg:text-lg text-[#fefaf4]">{% trans "Phone Number" %}</label>
                             <input type="tel" name="tel" id="tel"
                                 class="bg-[#091830] border-b-2 border-x-0 border-t-0 outline-none border-[#ff5d5d] px-0 focus:ring-0 focus:border-[#ff5d5d] text-[#fefaf4]">
                         </div>
@@ -59,7 +58,7 @@
 
                     <div class="flex lg:mt-[8vh] mt-8">
                         <div class="flex flex-col w-full">
-                            <label for="message" class="uppercase font-[300] lg:text-lg text-[#fefaf4]">Message*</label>
+                            <label for="message" class="uppercase font-[300] lg:text-lg text-[#fefaf4]">{% trans "Message" %}*</label>
                             <textarea type="text" name="message" id="message" rows="" required
                                 class="bg-[#091830] border-b-2 border-x-0 border-t-0 text-[#fefaf4] outline-none border-[#ff5d5d] px-0 focus:ring-0 focus:border-[#ff5d5d] w-full"></textarea>
                         </div>
@@ -67,8 +66,8 @@
 
                     <div class="flex mt-10">
                         <button id="contactUs"
-                            class="uppercase px-5 py-2 text-lg flex justify-between rounded-[3rem] lg:w-[8vw]">
-                            <p class="tracking-wider my-auto">submit</p>
+                            class="uppercase px-5 py-2 text-lg flex justify-between rounded-[3rem] lg:w-[10vw]">
+                            <p class="tracking-wider my-auto">{% trans "submit" %}</p>
                             <div class="flex my-auto hidden lg:block">
                                 <span
                                     class="h-3 w-3 rounded-full bg-[#091830] my-auto flex justify-center items-center transition-all duration-300">
@@ -79,8 +78,8 @@
                         </button>
 
                         <div class="my-auto px-5 py-2">
-                            <div id="successMessage" class="hidden">Message Sent!</div>
-                            <div id="failMessage" class="hidden text-sm">Message failed to send, please try again or contact us directly at INQUIRY@TOURCONTROL.AGENCY
+                            <div id="successMessage" class="hidden">{% trans "Message Sent!" %}</div>
+                            <div id="failMessage" class="hidden text-sm">{% trans "Message failed to send, please try again or contact us directly at INQUIRY@TOURCONTROL.AGENCY" %}
                             </div>
                             <div id="loadingMessage" class="hidden"><i class="fa-solid fa-spinner animate-spin"></i></div>
                         </div>
@@ -89,7 +88,7 @@
                 </form>
 
                 <div class="mb-[2rem] lg:mt-0 mt-[5vh]">
-                    <p class="text-slate-300">BUSINESS ENQUIRIES</p>
+                    <p class="text-slate-300">{% trans "BUSINESS ENQUIRIES" %}</p>
                     <p class="uppercase text-lg mt-1">inquiry@tourcontrol.agency</p>
                 </div>
             </div>

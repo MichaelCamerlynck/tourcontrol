@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-16 14:28+0200\n"
+"POT-Creation-Date: 2023-08-16 20:43+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,25 +18,81 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: .\templates\base\nav.html:13 .\templates\base\nav.html:59
+#: .\templates\base\nav.html:13 .\templates\base\nav.html:108
 msgid "Home"
 msgstr "Accueil"
 
-#: .\templates\base\nav.html:16 .\templates\base\nav.html:62
+#: .\templates\base\nav.html:16 .\templates\base\nav.html:111
 msgid "What We Do"
 msgstr "Ce Que Nous Faisons"
 
-#: .\templates\base\nav.html:19 .\templates\base\nav.html:65
+#: .\templates\base\nav.html:19 .\templates\base\nav.html:114
 msgid "Our Story"
 msgstr "Notre Histoire"
 
-#: .\templates\base\nav.html:22 .\templates\base\nav.html:68
+#: .\templates\base\nav.html:22 .\templates\base\nav.html:117
 msgid "Blog"
 msgstr "Blog"
 
-#: .\templates\base\nav.html:25 .\templates\base\nav.html:71
+#: .\templates\base\nav.html:25 .\templates\base\nav.html:120
 msgid "Contact Us"
 msgstr "Contactez-Nous"
+
+#: .\templates\contact.html:14
+#, fuzzy
+#| msgid "Contact Us"
+msgid "Contact"
+msgstr "Contactez-Nous"
+
+#: .\templates\contact.html:21
+#, fuzzy
+#| msgid "contact us"
+msgid "contact"
+msgstr "Contactez-nous"
+
+#: .\templates\contact.html:24
+msgid ""
+"EMPOWERING DIGITAL VISIONS, EMBRACING COLLABORATION. LET'S IGNITE YOUR "
+"ONLINE JOURNEY. REACH OUT TODAY!"
+msgstr "RENFORCER LES VISIONS NUMÉRIQUES, EMBRASSER LA COLLABORATION. ALLUMONS VOTRE PARCOURS EN LIGNE. CONTACTEZ-NOUS AUJOURD'HUI !"
+
+#: .\templates\contact.html:33
+msgid "Name"
+msgstr "Nom"
+
+#: .\templates\contact.html:39
+msgid "E-mail"
+msgstr ""
+
+#: .\templates\contact.html:47
+msgid "Topic"
+msgstr "Sujet"
+
+#: .\templates\contact.html:53
+msgid "Phone Number"
+msgstr "Numéro de téléphone"
+
+#: .\templates\contact.html:61
+msgid "Message"
+msgstr ""
+
+#: .\templates\contact.html:70
+msgid "submit"
+msgstr "Envoyer"
+
+#: .\templates\contact.html:81
+msgid "Message Sent!"
+msgstr "Message Envoyé !"
+
+#: .\templates\contact.html:82
+msgid ""
+"Message failed to send, please try again or contact us directly at "
+"INQUIRY@TOURCONTROL.AGENCY"
+msgstr "L'envoi du message a échoué, veuillez réessayer ou nous contacter directement à INQUIRY@TOURCONTROL.AGENCY"
+
+#: .\templates\contact.html:91
+msgid "BUSINESS ENQUIRIES"
+msgstr "DEMANDES D'AFFAIRES"
 
 #: .\templates\index.html:88
 msgid "unlock your"
@@ -64,15 +120,15 @@ msgstr "Découvrez Comment Nous Le Faisons"
 
 #: .\templates\index.html:126
 msgid "Versitile"
-msgstr ""
+msgstr "Polyvalent"
 
 #: .\templates\index.html:137
 msgid "Integrated"
-msgstr ""
+msgstr "Intégré"
 
 #: .\templates\index.html:148
 msgid "Empowered"
-msgstr ""
+msgstr "Habilité"
 
 #: .\templates\index.html:158 .\templates\index.html:188
 msgid ""
@@ -83,6 +139,13 @@ msgid ""
 "market. Let us help you unlock your full digital potential and navigate the "
 "ever-changing digital landscape with confidence."
 msgstr ""
+"Chez Tourcontrol, notre expertise s'étend à des entreprises de toutes "
+"tailles, cherchant chacune des solutions numériques innovantes et "
+"compétitives. Des petites startups aux entreprises établies, nous avons "
+"affiné nos compétences dans l'élaboration de stratégies personnalisées qui "
+"propulsent les entreprises en avant dans le marché moderne et rapide. "
+"Laissez-nous vous aider à libérer votre plein potentiel numérique et à "
+"naviguer avec confiance dans le paysage numérique en constante évolution."
 
 #: .\templates\index.html:164
 msgid ""
@@ -94,6 +157,14 @@ msgid ""
 "brand's full potential. Experience the transformative power of seamless "
 "integration and unlock unprecedented success in the digital realm."
 msgstr ""
+"Découvrez la fusion dynamique des technologies, des idées créatives, des "
+"concepts stratégiques et des perspectives basées sur les données chez "
+"Tourcontrol. Notre approche innovante est conçue pour élever vos campagnes "
+"marketing à de nouveaux sommets. De l'affinement de vos stratégies actuelles "
+"au développement d'un noyau MarTech sur mesure adapté à votre entreprise "
+"unique, nous sommes dévoués à libérer tout le potentiel de votre marque. "
+"Faites l'expérience du pouvoir transformateur de l'intégration fluide et "
+"débloquez un succès sans précédent dans le domaine numérique."
 
 #: .\templates\index.html:170 .\templates\index.html:219
 msgid ""
@@ -103,6 +174,13 @@ msgid ""
 "Experience the transformative difference of our meticulous media setup and "
 "elevate your business to new heights in the digital landscape."
 msgstr ""
+"Plongez dans le royaume des possibilités numériques illimitées avec "
+"Tourcontrol. Notre expertise réside dans la création d'un écosystème "
+"médiatique solide et personnalisé qui vous permet de tirer pleinement parti "
+"du pouvoir des campagnes modernes de marketing numérique. Faites "
+"l'expérience de la différence transformative de notre mise en place "
+"méticuleuse des médias et hissez votre entreprise vers de nouveaux sommets "
+"dans le paysage numérique."
 
 #: .\templates\index.html:204
 msgid ""
@@ -114,6 +192,14 @@ msgid ""
 "brand's full potential. Experience the transformative power of seamless "
 "integration and unlock unprecedented success in the digital realm."
 msgstr ""
+"Découvrez la fusion dynamique des technologies, des idées créatives, des "
+"concepts stratégiques et des perspectives basées sur les données chez "
+"Tourcontrol. Notre approche innovante vise à élever vos campagnes marketing "
+"vers de nouveaux sommets. De l'affinage de vos stratégies actuelles au "
+"développement d'un noyau MarTech sur mesure conçu pour votre entreprise "
+"unique, nous sommes dévoués à libérer le plein potentiel de votre marque. "
+"Faites l'expérience du pouvoir transformateur de l'intégration fluide et "
+"déverrouillez un succès sans précédent dans le domaine numérique."
 
 #: .\templates\index.html:234
 msgid "meet"
@@ -137,13 +223,15 @@ msgstr ""
 
 #: .\templates\index.html:243
 msgid "Meet the Team"
-msgstr ""
+msgstr "Rencontrez l'équipe"
 
 #: .\templates\index.html:292
 msgid ""
 "We have over <span class='font-bold text-[#ff5d5d]'>20 years</span> of "
 "growth marketing and strategy combined together"
 msgstr ""
+"Nous cumulons plus de <span class='font-bold text-[#ff5d5d]'>20 ans</span> "
+"d'expérience en marketing de croissance et en stratégie"
 
 #: .\templates\index.html:298
 msgid ""
@@ -154,6 +242,12 @@ msgid ""
 "an insurmountable challenge for many, but together, we turn the impossible "
 "into a reality."
 msgstr ""
+"Chez Tour Control, nous sommes fiers d'autonomiser de nombreuses entités "
+"corporatives grâce à notre expertise éprouvée, les guidant dans leur voyage "
+"transformateur vers la pertinence numérique. Nous comprenons que l'adoption "
+"de la digitalisation et l'établissement d'un noyau MarTech solide peuvent "
+"sembler être un défi insurmontable pour beaucoup, mais ensemble, nous "
+"transformons l'impossible en réalité."
 
 #: .\templates\index.html:306
 msgid "Witness the"
@@ -173,6 +267,10 @@ msgid ""
 "dynamic business landscape. We take pride in motivating them to embrace the "
 "digital revolution, and they continue to stand strong."
 msgstr ""
+"Les entreprises qui ont osé le saut ne survivent pas seulement, mais "
+"prospèrent dans le paysage commercial dynamique d'aujourd'hui. Nous sommes "
+"fiers de les avoir motivées à embrasser la révolution numérique, et elles "
+"continuent de rester solides."
 
 #: .\templates\index.html:320
 msgid ""
@@ -181,19 +279,24 @@ msgid ""
 "full potential. Don't miss this opportunity to thrive in the digital age - "
 "take that leap and secure your place among the digitally relevant elite."
 msgstr ""
+"Maintenant, c'est à vous de briller ! Propulsons votre entreprise vers un "
+"avenir plus lumineux en exploitant le pouvoir de la transformation numérique "
+"et en libérant son plein potentiel. Ne manquez pas cette opportunité de "
+"prospérer à l'ère numérique - faites ce pas en avant et sécurisez votre "
+"place parmi l'élite numériquement pertinente."
 
 #: .\templates\index.html:329
 msgid "start your"
-msgstr ""
+msgstr "Commencez votre parcours"
 
 #: .\templates\index.html:330
 msgid "digital journey"
-msgstr ""
+msgstr "numérique dès"
 
 #: .\templates\index.html:331
 msgid "today"
-msgstr ""
+msgstr "aujourd'hui"
 
 #: .\templates\index.html:336
 msgid "contact us"
-msgstr ""
+msgstr "Contactez-nous"

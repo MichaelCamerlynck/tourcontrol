@@ -3,8 +3,56 @@
 {% load i18n %}
 {% block body_block %}
 
-<div>
-    
+{% include 'base/nav.html' %}
+
+<div class="flex flex-row font-[Montserrat]">
+
+    <div class="basis-[30%] h-screen fixed top-0">
+        <div class="flex flex-col justify-center pl-[6vw] h-full">
+            <h1 class="uppercase font-bold text-[9rem] leading-none">{% trans "Blogs" %}</h1>
+            <h2 class="lg:pl-2">{% trans "Our Latest Thoughts on Things" %}</h2>
+        </div>
+    </div>
+
+    <div class="basis-[30%] h-screen">
+        <div class="flex flex-col justify-center pl-[6vw] h-full"></div>
+    </div>
+
+    <div class="basis-[70%] lg:pt-[20vh]">
+
+        {% for blog in blogs %}
+        <div class="flex flex-row mx-[10vw] px-5 pb-16 border-b-2 border-[#BE3455] mb-16">
+
+            <div class="basis-[40%] mr-[2vw]">
+                <img class="object-cover h-[50vh]" src="{{blog.main_img.url}}" alt="">
+            </div>
+
+            <div class="basis-[40%] flex flex-col">
+
+                <div class="basis-1/2">
+
+                    <h4 class="text-xs uppercase font-bold">{{blog.date}}</h4>
+                    <h2 class="text-3xl font-bold capitalize mt-2">{{blog.title}}</h2>
+                    <a href="{% url 'blog' pk=blog.id %}" class="inline-block mt-6 rounded-2xl bg-[#BE3455] text-[#091830] py-1 px-4 font-bold">
+                        Read More
+                    </a>
+
+                </div>
+
+                <div class="basis-1/2 flex items-end">
+                    <p class="text-sm">
+                        {{blog.description}}
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="basis-[20%]"></div>
+
+        </div>
+        {% endfor %}
+
+    </div>
 </div>
 
 

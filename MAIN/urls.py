@@ -6,6 +6,7 @@ urlpatterns = [
     path("home", views.IndexHomeView.as_view(), name='home'),
     path("contact", views.Contact.as_view(), name='contact'),
     path("send", views.send, name='send'),
-    # path("blog", views.BlogListView.as_view(), name='blog'),
+    path("blog", views.BlogListView.as_view(), name='blog'),
+    path("blog/<int:pk>", views.BlogDetailView.as_view(), name='blog'),
     path('switch-language/<str:language_code>/', views.switch_language, name='switch_language'),
 ]

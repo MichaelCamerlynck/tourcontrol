@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-16 20:43+0200\n"
+"POT-Creation-Date: 2023-08-17 17:22+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -38,6 +38,16 @@ msgstr "Blog"
 msgid "Contact Us"
 msgstr "Contactez-Nous"
 
+#: .\templates\blog\list.html:12
+#, fuzzy
+#| msgid "Blog"
+msgid "Blogs"
+msgstr "Blogs"
+
+#: .\templates\blog\list.html:13
+msgid "Our Latest Thoughts on Things"
+msgstr "Nos Dernières Réflexions sur les Choses"
+
 #: .\templates\contact.html:14
 #, fuzzy
 #| msgid "Contact Us"
@@ -54,7 +64,9 @@ msgstr "Contactez-nous"
 msgid ""
 "EMPOWERING DIGITAL VISIONS, EMBRACING COLLABORATION. LET'S IGNITE YOUR "
 "ONLINE JOURNEY. REACH OUT TODAY!"
-msgstr "RENFORCER LES VISIONS NUMÉRIQUES, EMBRASSER LA COLLABORATION. ALLUMONS VOTRE PARCOURS EN LIGNE. CONTACTEZ-NOUS AUJOURD'HUI !"
+msgstr ""
+"RENFORCER LES VISIONS NUMÉRIQUES, EMBRASSER LA COLLABORATION. ALLUMONS VOTRE "
+"PARCOURS EN LIGNE. CONTACTEZ-NOUS AUJOURD'HUI !"
 
 #: .\templates\contact.html:33
 msgid "Name"
@@ -88,7 +100,9 @@ msgstr "Message Envoyé !"
 msgid ""
 "Message failed to send, please try again or contact us directly at "
 "INQUIRY@TOURCONTROL.AGENCY"
-msgstr "L'envoi du message a échoué, veuillez réessayer ou nous contacter directement à INQUIRY@TOURCONTROL.AGENCY"
+msgstr ""
+"L'envoi du message a échoué, veuillez réessayer ou nous contacter "
+"directement à INQUIRY@TOURCONTROL.AGENCY"
 
 #: .\templates\contact.html:91
 msgid "BUSINESS ENQUIRIES"
@@ -225,7 +239,7 @@ msgstr ""
 msgid "Meet the Team"
 msgstr "Rencontrez l'équipe"
 
-#: .\templates\index.html:292
+#: .\templates\index.html:270
 msgid ""
 "We have over <span class='font-bold text-[#BE3455]'>20 years</span> of "
 "growth marketing and strategy combined together"
@@ -233,7 +247,7 @@ msgstr ""
 "Nous cumulons plus de <span class='font-bold text-[#BE3455]'>20 ans</span> "
 "d'expérience en marketing de croissance et en stratégie"
 
-#: .\templates\index.html:298
+#: .\templates\index.html:276
 msgid ""
 "At Tour Control, we pride ourselves on empowering numerous corporate "
 "entities with our seasoned expertise, guiding them on their transformative "
@@ -249,19 +263,19 @@ msgstr ""
 "sembler être un défi insurmontable pour beaucoup, mais ensemble, nous "
 "transformons l'impossible en réalité."
 
-#: .\templates\index.html:306
+#: .\templates\index.html:284
 msgid "Witness the"
 msgstr ""
 
-#: .\templates\index.html:307
+#: .\templates\index.html:285
 msgid "Success"
 msgstr ""
 
-#: .\templates\index.html:308
+#: .\templates\index.html:286
 msgid "Stories"
 msgstr ""
 
-#: .\templates\index.html:316
+#: .\templates\index.html:294
 msgid ""
 "Companies that took the leap are not only surviving but thriving in today's "
 "dynamic business landscape. We take pride in motivating them to embrace the "
@@ -272,7 +286,7 @@ msgstr ""
 "fiers de les avoir motivées à embrasser la révolution numérique, et elles "
 "continuent de rester solides."
 
-#: .\templates\index.html:320
+#: .\templates\index.html:298
 msgid ""
 "Now, it's your turn to soar! Let's propel your business towards a brighter "
 "future by harnessing the power of digital transformation and unleashing its "
@@ -285,18 +299,18 @@ msgstr ""
 "prospérer à l'ère numérique - faites ce pas en avant et sécurisez votre "
 "place parmi l'élite numériquement pertinente."
 
-#: .\templates\index.html:329
+#: .\templates\index.html:307
 msgid "start your"
 msgstr "Commencez votre parcours"
 
-#: .\templates\index.html:330
+#: .\templates\index.html:308
 msgid "digital journey"
 msgstr "numérique dès"
 
-#: .\templates\index.html:331
+#: .\templates\index.html:309
 msgid "today"
 msgstr "aujourd'hui"
 
-#: .\templates\index.html:336
+#: .\templates\index.html:314
 msgid "contact us"
 msgstr "Contactez-nous"

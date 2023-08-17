@@ -8,7 +8,7 @@ from django.conf import settings
 from django.utils import translation
 from django.http import HttpResponseRedirect
 
-from MAIN.models import TeamMember
+from MAIN.models import *
 
 import datetime
 import requests
@@ -56,8 +56,30 @@ class Contact(TemplateView):
         return context
 
 
-# class BlogListView(ListView):
+class BlogListView(ListView):
+    template_name = "blog/list.html"
+    model = Blog
+    context_object_name = 'blogs'
 
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+
+        context["title"] = "Tourcontrol Consulting"
+        context["year"] = datetime.datetime.now().year
+        return context
+    
+
+class BlogDetailView(DetailView):
+    template_name = "blog/detail.html"
+    model = Blog
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+
+        context["title"] = "Tourcontrol Consulting"
+        context["year"] = datetime.datetime.now().year
+        return context
 
 
 def switch_language(request, language_code):

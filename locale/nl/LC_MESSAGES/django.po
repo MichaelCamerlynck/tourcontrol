@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-16 20:43+0200\n"
+"POT-Creation-Date: 2023-08-17 17:22+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -38,6 +38,16 @@ msgstr "Blog"
 msgid "Contact Us"
 msgstr "Ons Contacteren"
 
+#: .\templates\blog\list.html:12
+#, fuzzy
+#| msgid "Blog"
+msgid "Blogs"
+msgstr "Blogs"
+
+#: .\templates\blog\list.html:13
+msgid "Our Latest Thoughts on Things"
+msgstr "Onze Nieuwste Gedachten Over Dingen"
+
 #: .\templates\contact.html:14
 #, fuzzy
 #| msgid "Contact Us"
@@ -54,7 +64,9 @@ msgstr "Contacteer ons"
 msgid ""
 "EMPOWERING DIGITAL VISIONS, EMBRACING COLLABORATION. LET'S IGNITE YOUR "
 "ONLINE JOURNEY. REACH OUT TODAY!"
-msgstr "DIGITALE VISIES VERSTERKEN, SAMENWERKING OMARMEN. LATEN WE JOUW ONLINE REIS ONTSTEKEN. NEEM VANDAAG NOG CONTACT OP!"
+msgstr ""
+"DIGITALE VISIES VERSTERKEN, SAMENWERKING OMARMEN. LATEN WE JOUW ONLINE REIS "
+"ONTSTEKEN. NEEM VANDAAG NOG CONTACT OP!"
 
 #: .\templates\contact.html:33
 msgid "Name"
@@ -88,7 +100,9 @@ msgstr "Bericht Verzonden"
 msgid ""
 "Message failed to send, please try again or contact us directly at "
 "INQUIRY@TOURCONTROL.AGENCY"
-msgstr "Bericht kon niet worden verzonden, probeer het opnieuw of neem rechtstreeks contact met ons op via INQUIRY@TOURCONTROL.AGENCY"
+msgstr ""
+"Bericht kon niet worden verzonden, probeer het opnieuw of neem rechtstreeks "
+"contact met ons op via INQUIRY@TOURCONTROL.AGENCY"
 
 #: .\templates\contact.html:91
 msgid "BUSINESS ENQUIRIES"
@@ -225,7 +239,7 @@ msgstr "groep"
 msgid "Meet the Team"
 msgstr "Ontmoet het team"
 
-#: .\templates\index.html:292
+#: .\templates\index.html:270
 msgid ""
 "We have over <span class='font-bold text-[#BE3455]'>20 years</span> of "
 "growth marketing and strategy combined together"
@@ -233,7 +247,7 @@ msgstr ""
 "Samen hebben we meer dan <span class='font-bold text-[#BE3455]'>20 jaar</"
 "span> aan groeimarketing en strategie"
 
-#: .\templates\index.html:298
+#: .\templates\index.html:276
 msgid ""
 "At Tour Control, we pride ourselves on empowering numerous corporate "
 "entities with our seasoned expertise, guiding them on their transformative "
@@ -249,19 +263,19 @@ msgstr ""
 "als een onoverkomelijke uitdaging kan hebben geleken, maar samen maken we "
 "het onmogelijke werkelijkheid."
 
-#: .\templates\index.html:306
+#: .\templates\index.html:284
 msgid "Witness the"
 msgstr "Aanschouw de"
 
-#: .\templates\index.html:307
+#: .\templates\index.html:285
 msgid "Success"
 msgstr "succes"
 
-#: .\templates\index.html:308
+#: .\templates\index.html:286
 msgid "Stories"
 msgstr "verhalen"
 
-#: .\templates\index.html:316
+#: .\templates\index.html:294
 msgid ""
 "Companies that took the leap are not only surviving but thriving in today's "
 "dynamic business landscape. We take pride in motivating them to embrace the "
@@ -272,7 +286,7 @@ msgstr ""
 "te hebben gemotiveerd om de digitale revolutie te omarmen, en ze blijven "
 "standhouden."
 
-#: .\templates\index.html:320
+#: .\templates\index.html:298
 msgid ""
 "Now, it's your turn to soar! Let's propel your business towards a brighter "
 "future by harnessing the power of digital transformation and unleashing its "
@@ -285,18 +299,18 @@ msgstr ""
 "om te gedijen in het digitale tijdperk - waag die sprong en verzeker je plek "
 "bij de digitaal relevante elite."
 
-#: .\templates\index.html:329
+#: .\templates\index.html:307
 msgid "start your"
 msgstr "begin vandaag nog"
 
-#: .\templates\index.html:330
+#: .\templates\index.html:308
 msgid "digital journey"
 msgstr "aan je digitale"
 
-#: .\templates\index.html:331
+#: .\templates\index.html:309
 msgid "today"
 msgstr "reis"
 
-#: .\templates\index.html:336
+#: .\templates\index.html:314
 msgid "contact us"
 msgstr "Contacteer ons"

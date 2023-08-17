@@ -4,3 +4,6 @@ from .models import *
 # Register your models here.
 
 admin.site.register(TeamMember)
+admin.site.register(Blog)
+admin.site.register(Paragraph)
+admin.site.register(ParagraphImage)

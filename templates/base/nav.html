@@ -1,6 +1,6 @@
 {% load static %}
 {% load i18n %}
-<div class="fixed lg:top-12 top-3 w-full">
+<div class="fixed lg:top-12 top-3 w-full font-[Montserrat]">
 
     <div class="flex flex-row justify-between items-center px-[3vw]">
         <a href="{% url 'home' %}">
@@ -19,7 +19,7 @@
                     <a href="{% url 'home' %}#ourstory">{% trans "Our Story" %}</a>
                 </li>
                 <li class="my-auto">
-                    <a href="{% url 'home' %}">{% trans "Blog" %}</a>
+                    <a href="{% url 'blog' %}">{% trans "Blog" %}</a>
                 </li>
                 <li class="my-auto">
                     <a href="{% url 'contact' %}">{% trans "Contact Us" %}</a>
@@ -98,7 +98,7 @@
     </div>
 </div>
 
-<div class="h-screen fixed top-0 lg:translate-x-[-40vw] translate-x-[-60vw] lg:w-[40vw] w-[60vw] transition-all duration-500 ease-in-out bg-[#050c18] rounded-r z-50"
+<div class="h-screen fixed top-0 lg:translate-x-[-40vw] translate-x-[-60vw] lg:w-[40vw] w-[60vw] transition-all duration-500 ease-in-out bg-[#050c18] rounded-r z-50 font-[Montserrat]"
     id="navModal">
 
     <div class="w-full h-full flex justify-center items-center">
@@ -114,7 +114,7 @@
                 <a href="{% url 'home' %}#ourstory">{% trans "Our Story" %}</a>
             </li>
             <li class="my-auto">
-                <a href="{% url 'home' %}">{% trans "Blog" %}</a>
+                <a href="{% url 'blog' %}">{% trans "Blog" %}</a>
             </li>
             <li class="my-auto">
                 <a href="{% url 'contact' %}">{% trans "Contact Us" %}</a>

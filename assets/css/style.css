@@ -82,7 +82,7 @@ html {
 }
 
 #contactUs {
-    background: linear-gradient(to top, #73fffe 50%, #ff5d5d 50%);
+    background: linear-gradient(to top, #73fffe 50%, #BE3455 50%);
     background-size: 100% 200%;
     transition: all 0.3s ease-in-out;
 }

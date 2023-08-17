@@ -227,10 +227,10 @@ msgstr "Ontmoet het team"
 
 #: .\templates\index.html:292
 msgid ""
-"We have over <span class='font-bold text-[#ff5d5d]'>20 years</span> of "
+"We have over <span class='font-bold text-[#BE3455]'>20 years</span> of "
 "growth marketing and strategy combined together"
 msgstr ""
-"Samen hebben we meer dan <span class='font-bold text-[#ff5d5d]'>20 jaar</"
+"Samen hebben we meer dan <span class='font-bold text-[#BE3455]'>20 jaar</"
 "span> aan groeimarketing en strategie"
 
 #: .\templates\index.html:298

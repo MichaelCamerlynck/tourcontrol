@@ -227,10 +227,10 @@ msgstr "Rencontrez l'équipe"
 
 #: .\templates\index.html:292
 msgid ""
-"We have over <span class='font-bold text-[#ff5d5d]'>20 years</span> of "
+"We have over <span class='font-bold text-[#BE3455]'>20 years</span> of "
 "growth marketing and strategy combined together"
 msgstr ""
-"Nous cumulons plus de <span class='font-bold text-[#ff5d5d]'>20 ans</span> "
+"Nous cumulons plus de <span class='font-bold text-[#BE3455]'>20 ans</span> "
 "d'expérience en marketing de croissance et en stratégie"
 
 #: .\templates\index.html:298

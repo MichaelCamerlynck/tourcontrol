@@ -1,4 +1,4 @@
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, ListView, DetailView
 from django.http import JsonResponse
 from django.utils.translation import gettext as _
 from django.core.mail import EmailMultiAlternatives
@@ -7,6 +7,8 @@ from django.template.loader import render_to_string
 from django.conf import settings
 from django.utils import translation
 from django.http import HttpResponseRedirect
+
+from MAIN.models import TeamMember
 
 import datetime
 import requests
@@ -23,6 +25,7 @@ class IndexView(TemplateView):
         context["title"] = "Tourcontrol Consulting"
         context["year"] = datetime.datetime.now().year
         context["splash"] = True
+        context["members"] = TeamMember.objects.all()
 
         return context
    
@@ -36,6 +39,7 @@ class IndexHomeView(TemplateView):
         context["title"] = "Tourcontrol Consulting"
         context["year"] = datetime.datetime.now().year
         context["splash"] = False
+        context["members"] = TeamMember.objects.all()
 
         return context
    
@@ -50,6 +54,10 @@ class Contact(TemplateView):
         context["year"] = datetime.datetime.now().year
 
         return context
+
+
+# class BlogListView(ListView):
+
 
 
 def switch_language(request, language_code):
@@ -92,7 +100,7 @@ def send(request):
     }
 
    url = "https://discord.com/api/webhooks/1141008820395581470/wnS4sh54LNr-68Kjx4ED7CWDyWsJoi_IYvx76YOLVMnKrxDviP-zRHHRURTZDAOUlL1G"
-   # requests.post(url, json=data)
+   requests.post(url, json=data)
 
    receiver = os.getenv('SEND_EMAIL_TO')
    context = {
@@ -106,3 +114,5 @@ def send(request):
    send_email_to_user(receiver, topic, context, template)
 
    return JsonResponse({"data" : "success"}, status=200)
+
+

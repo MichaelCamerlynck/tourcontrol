@@ -246,42 +246,20 @@
 
                 <div class="lg:basis-1/2 h-full flex flex-col lg:flex-row overflow-x-hidden items-center lg:-ml-[5rem] cursor-grab"
                     id="container">
-
+                    
+                    {% for member in members %}
                     <div class="relative inline-block shrink-0 lg:mr-5 lg:mb-0 mb-5">
-                        <img class="object-cover lg:h-[65vh] lg:w-[65vh] h-[37vh] w-[37vh] "
-                            src="{% static 'imgs/MichelProfilePic1.jpg' %}" alt="">
+                        <img class="object-cover black lg:h-[65vh] lg:w-[65vh] h-[37vh] w-[37vh] "
+                            src="{{member.img.url}}" alt="">
 
                         <div class="absolute h-full w-full top-0 flex justify-center items-end">
                             <div class="text-center mb-2">
-                                <p class="font-bold text-2xl tracking-widest">CEO & FOUNDER</p>
-                                <p class="tracking-widest text-xl">Michel Lenaerts</p>
+                                <p class="font-bold text-2xl tracking-widest">{{member.position}}</p>
+                                <p class="tracking-widest text-xl">{{member.name}}</p>
                             </div>
                         </div>
                     </div>
-
-                    <!-- <div class="relative inline-block shrink-0 lg:mr-5 lg:mb-0 mb-5">
-                        <img class="object-cover lg:h-[65vh] lg:w-[65vh] h-[37vh] w-[37vh] "
-                            src="{% static 'imgs/placeholder.jpg' %}" alt="">
-
-                        <div class="absolute h-full w-full top-0 flex justify-center items-end">
-                            <div class="text-center mb-2">
-                                <p class="font-bold text-2xl tracking-widest">CFO</p>
-                                <p class="tracking-widest text-xl">Name Here</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="relative inline-block shrink-0 lg:mr-5 lg:mb-0 mb-5">
-                        <img class="object-cover lg:h-[65vh] lg:w-[65vh] h-[37vh] w-[37vh] "
-                            src="{% static 'imgs/placeholder.jpg' %}" alt="">
-
-                        <div class="absolute h-full w-full top-0 flex justify-center items-end">
-                            <div class="text-center mb-2">
-                                <p class="font-bold text-2xl tracking-widest">CTO</p>
-                                <p class="tracking-widest text-xl">Name Here</p>
-                            </div>
-                        </div>
-                    </div> -->
+                    {% endfor %}
 
                 </div>
             </div>

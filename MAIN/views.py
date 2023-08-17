@@ -8,6 +8,8 @@ from django.conf import settings
 from django.utils import translation
 from django.http import HttpResponseRedirect
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.views.decorators.http import require_POST
+from django.templatetags.static import static
 
 from MAIN.models import *
 
@@ -94,6 +96,36 @@ class HomeSecret(LoginRequiredMixin, TemplateView):
         context["year"] = datetime.datetime.now().year
 
         return context
+    
+
+class ManageMembers(LoginRequiredMixin, ListView):
+    template_name = "secret/manage_members.html"
+    model = TeamMember
+    context_object_name = "members"
+    login_url = "/admin/login/"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+
+        context["title"] = "Manage Memebers | Tourcontrol Consulting"
+        context["year"] = datetime.datetime.now().year
+
+        return context
+    
+
+class ManageBlogList(LoginRequiredMixin, ListView):
+    template_name = "secret/blog_list.html"
+    model = Blog
+    context_object_name = "blogs"
+    login_url = "/admin/login/"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+
+        context["title"] = "Manage Blogs List | Tourcontrol Consulting"
+        context["year"] = datetime.datetime.now().year
+
+        return context
 
 
 def switch_language(request, language_code):
@@ -152,3 +184,46 @@ def send(request):
    return JsonResponse({"data" : "success"}, status=200)
 
 
+@require_POST
+def delete_member(request):
+    id = request.POST["id"]
+
+    team_member = TeamMember.objects.get(id=id)
+    team_member.delete()
+
+    data = {
+        "status" : 200
+        }
+
+    return JsonResponse(data, status=200)
+
+
+@require_POST
+def manage_member(request):
+    id = request.POST["id"]
+    name = request.POST["name"]
+    position = request.POST["position"]
+    img = request.FILES.get("img")
+
+    if id == "new":
+        team_member = TeamMember(
+            name = name,
+            position = position
+        )
+    else:
+        team_member = TeamMember.objects.get(id=id)
+        team_member.name = name
+        team_member.position = position
+    
+    if img:
+        team_member.img = img
+    elif not img and id == "new":
+        team_member.img = static("imgs/placeholder.jpg")
+
+    team_member.save()
+
+    data = {
+        "status" : 200
+    }
+
+    return JsonResponse(data, status=200)

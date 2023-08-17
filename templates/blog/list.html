@@ -7,33 +7,33 @@
 
 <div class="flex flex-row font-[Montserrat]">
 
-    <div class="basis-[30%] h-screen fixed top-0 -z-50">
+    <div class="basis-[30%] h-screen fixed top-0 -z-50 hidden lg:block">
         <div class="flex flex-col justify-center pl-[6vw] h-full">
             <h1 class="uppercase font-bold text-[9rem] leading-none">{% trans "Blogs" %}</h1>
             <h2 class="lg:pl-2">{% trans "Our Latest Thoughts on Things" %}</h2>
         </div>
     </div>
 
-    <div class="basis-[30%] h-screen">
+    <div class="basis-[30%] h-screen hidden lg:block">
         <div class="flex flex-col justify-center pl-[6vw] h-full"></div>
     </div>
 
-    <div class="basis-[70%] lg:pt-[20vh]">
+    <div class="lg:basis-[70%] lg:pt-[20vh] pt-16 lg:px-0 px-3 lg:pb-0 pb-24">
 
         {% for blog in blogs %}
-        <div class="flex flex-row mx-[10vw] px-5 pb-16 border-b-2 border-[#BE3455] mb-16">
+        <div class="lg:flex flex-row lg:mx-[10vw] px-5 pb-16 border-b-2 border-[#BE3455] mb-16 last:border-b-0">
 
-            <div class="basis-[40%] mr-[2vw]">
-                <img class="object-cover h-[50vh]" src="{{blog.main_img.url}}" alt="">
+            <div class="lg:basis-[40%] lg:mr-[2vw]">
+                <img class="object-cover lg:h-[50vh] h-[30vh] w-full" src="{{blog.main_img.url}}" alt="">
             </div>
 
-            <div class="basis-[40%] flex flex-col">
+            <div class="lg:basis-[40%] flex flex-col">
 
                 <div class="basis-1/2">
 
-                    <h4 class="text-xs uppercase font-bold">{{blog.date}}</h4>
+                    <h4 class="text-xs uppercase font-bold lg:mt-0 mt-3">{{blog.date}}</h4>
                     <h2 class="text-3xl font-bold capitalize mt-2">{{blog.title}}</h2>
-                    <a href="{% url 'blog' pk=blog.id %}" class="inline-block mt-6 rounded-2xl bg-[#BE3455] text-[#091830] py-1 px-4 font-bold">
+                    <a href="{% url 'blog' pk=blog.id %}" class="lg:mb-0 mb-5 inline-block mt-6 rounded-2xl bg-[#BE3455] text-[#091830] py-1 px-4 font-bold">
                         Read More
                     </a>
 
@@ -47,7 +47,7 @@
 
             </div>
 
-            <div class="basis-[20%]"></div>
+            <div class="lg:basis-[20%]"></div>
 
         </div>
         {% endfor %}

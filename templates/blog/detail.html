@@ -5,59 +5,49 @@
 
 {% include 'base/nav.html' %}
 
-<div class="px-[3vw]">
+<div class="px-[3vw] lg:pb-0 pb-[10vh]">
 
-    <header class="h-screen pt-[15vh] ">
-        <img class="w-full h-[70%] object-cover rounded-3xl" src="{{blog.main_img.url}}"" alt="">
+    <header class="lg:h-screen lg:pt-[15vh] pt-[10vh]">
+        <img class="w-full lg:h-[70%] h-[50vh] object-cover rounded-3xl" src="{{blog.main_img.url}}" alt="">
 
         <div class=" h-[30%] flex flex-col px-[3vw] pt-10">
-        <p class="font-bold uppercase font-[Montserrat] mb-3">{{blog.date}}</p>
-        <h1 class=" leading-none capitalize text-[4rem] font-bold font-[Montserrat]">{{blog.title}}</h1>
-</div>
-</header>
-
-<div class="px-[10vw] pb-[20vh] flex flex-row">
-
-    <div class="basis-[5%]"></div>
-    <div class="basis-[70%] text-xl space-y-10" style="font-family: 'Work Sans';">
-
-        <!-- <div class="flex justify-around">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime consectetur error ex at tenetur id voluptate
-            temporibus pariatur dicta ipsam, voluptas blanditiis in repellat quasi iure ad, inventore accusantium assumenda
-            corporis expedita? Veritatis, et voluptatibus? Cupiditate recusandae laudantium harum, voluptatum dolorum rem
-            eius quam temporibus dolores officia, magnam saepe est.
+            <p class="font-bold uppercase font-[Montserrat] mb-3">{{blog.date}}</p>
+            <h1 class=" leading-none capitalize lg:text-[4rem] text-[3rem] font-bold font-[Montserrat]">
+                {{blog.title}}
+            </h1>
         </div>
+    </header>
 
-        <div class="flex justify-around">
-            <img class="h-[35vh] object-cover" src="{% static 'imgs/placeholder.jpg' %}" alt="">
-        </div> -->
+    <div class="lg:px-[10vw] px-[3vw] pb-[20vh] lg:flex lg:flex-row lg:mt-0 mt-10">
 
-        {% for paragraph in blog.paragraph_set.all %}
-        {% if paragraph.is_img %}
+        <div class="lg:basis-[5%]"></div>
+        <div class="lg:basis-[70%] lg:text-xl space-y-10" style="font-family: 'Work Sans';">
+            {% for paragraph in blog.paragraph_set.all %}
+            {% if paragraph.is_img %}
 
-        <div class="flex justify-around">
-            
-            {% for img in paragraph.paragraphimage_set.all  %}
-            <img class="h-[35vh] object-cover" src="{{img.img.url}}" alt="">
+            <div class="lg:flex lg:justify-around lg:space-y-0 space-y-5">
+
+                {% for img in paragraph.paragraphimage_set.all %}
+                <img class="h-[35vh] w-full object-cover" src="{{img.img.url}}" alt="">
+                {% endfor %}
+
+            </div>
+
+            {% else %}
+
+            <div class="flex justify-around">
+                {{paragraph.text}}
+            </div>
+
+            {% endif %}
             {% endfor %}
 
+
+
         </div>
-
-        {% else %}
-
-        <div class="flex justify-around">
-            {{paragraph.text}}
-        </div>
-
-        {% endif %}
-        {% endfor %}
-
-
+        <div class="lg:basis-[25%]"></div>
 
     </div>
-    <div class="basis-[25%]"></div>
-
-</div>
 </div>
 
 {% endblock %}

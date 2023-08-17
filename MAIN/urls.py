@@ -9,4 +9,6 @@ urlpatterns = [
     path("blog", views.BlogListView.as_view(), name='blog'),
     path("blog/<int:pk>", views.BlogDetailView.as_view(), name='blog'),
     path('switch-language/<str:language_code>/', views.switch_language, name='switch_language'),
+
+    path("home_admin", views.HomeSecret.as_view(), name='home_admin'),
 ]

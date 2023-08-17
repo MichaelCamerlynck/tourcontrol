@@ -7,6 +7,7 @@ from django.template.loader import render_to_string
 from django.conf import settings
 from django.utils import translation
 from django.http import HttpResponseRedirect
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 from MAIN.models import *
 
@@ -22,7 +23,7 @@ class IndexView(TemplateView):
    def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
 
-        context["title"] = "Tourcontrol Consulting"
+        context["title"] = "Home | Tourcontrol Consulting"
         context["year"] = datetime.datetime.now().year
         context["splash"] = True
         context["members"] = TeamMember.objects.all()
@@ -36,7 +37,7 @@ class IndexHomeView(TemplateView):
    def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
 
-        context["title"] = "Tourcontrol Consulting"
+        context["title"] = "Home | Tourcontrol Consulting"
         context["year"] = datetime.datetime.now().year
         context["splash"] = False
         context["members"] = TeamMember.objects.all()
@@ -65,7 +66,7 @@ class BlogListView(ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
 
-        context["title"] = "Tourcontrol Consulting"
+        context["title"] = "Blogs | Tourcontrol Consulting"
         context["year"] = datetime.datetime.now().year
         return context
     
@@ -77,8 +78,21 @@ class BlogDetailView(DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
 
-        context["title"] = "Tourcontrol Consulting"
+        context["title"] = "Tourcontrol Consulting Blog"
         context["year"] = datetime.datetime.now().year
+        return context
+
+
+class HomeSecret(LoginRequiredMixin, TemplateView):
+    template_name = "secret/home.html"
+    login_url = "/admin/login/"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+
+        context["title"] = "Admin | Tourcontrol Consulting"
+        context["year"] = datetime.datetime.now().year
+
         return context
 
 

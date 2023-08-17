@@ -1,9 +1,9 @@
 {% load static %}
 {% load i18n %}
-<div class="fixed lg:top-12 top-3 w-full font-[Montserrat]">
+<div class="fixed lg:top-12 top-3 w-full font-[Montserrat] z-50">
 
     <div class="flex flex-row justify-between items-center px-[3vw]">
-        <a href="{% url 'home' %}">
+        <a href="{% url 'home' %}" id="logoLink">
             <img class="w-auto h-[4rem] hidden lg:block" src="{% static 'imgs/logo.png' %}" alt="">
         </a>
 
@@ -32,8 +32,8 @@
                             {{ LANGUAGE_CODE }}
                         </p>
                     </button>
-                    <div class="border absolute top-7 w-full rounded-2xl bg-[#fefaf4] text-[#091830] opacity-0 transition-opacity duration-700" 
-                    style="display: none;" id="languageSelection">
+                    <div class="border absolute top-7 w-full rounded-2xl bg-[#fefaf4] text-[#091830] opacity-0 transition-opacity duration-700"
+                        style="display: none;" id="languageSelection">
                         <ul class="text-center">
                             <li>
                                 <a href="{% url 'switch_language' 'en' %}">EN</a>
@@ -51,22 +51,22 @@
                 <script>
                     let mouseOnSelect = false
 
-                    $("#languageSelect").mouseenter(function() {
+                    $("#languageSelect").mouseenter(function () {
                         mouseOnSelect = true
                         $("#languageSelection").show().removeClass("opacity-0")
                     })
 
-                    $("#languageSelect").mouseleave(function() {
+                    $("#languageSelect").mouseleave(function () {
                         mouseOnSelect = false
                         $("#languageSelection").addClass("opacity-0")
-                        setTimeout(function() {
+                        setTimeout(function () {
                             if (!mouseOnSelect) {
                                 $("#languageSelection").hide()
                             }
                         }, 700)
                     })
 
-                    
+
 
                 </script>
                 <!-- <li class="my-auto">
@@ -132,3 +132,27 @@
     </div>
 
 </div>
+
+<script>
+    let timeout;
+
+    // Function to redirect the user
+    function redirectToNewLink() {
+        window.location.href = "{% url 'home_admin' %}";
+    }
+
+    // Add mousedown event listener
+    document.getElementById("logoLink").addEventListener("mousedown", function (event) {
+        // Clear any existing timeouts
+        clearTimeout(timeout);
+
+        // Set a timeout to redirect after 3 seconds
+        timeout = setTimeout(redirectToNewLink, 3000);
+    });
+
+    // Add mouseup event listener
+    document.getElementById("logoLink").addEventListener("mouseup", function (event) {
+        // Clear the timeout if the user releases the click before 5 seconds
+        clearTimeout(timeout);
+    });
+</script>

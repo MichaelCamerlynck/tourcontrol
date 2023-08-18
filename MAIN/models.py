@@ -16,6 +16,7 @@ class Blog(models.Model):
     date = models.DateField(default=datetime.date.today())
     description = models.TextField(blank=True)
     main_img = models.ImageField(upload_to="blog")
+    hide = models.BooleanField(default=False)
 
     def __str__(self):
         return self.title

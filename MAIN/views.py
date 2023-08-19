@@ -10,12 +10,16 @@ from django.http import HttpResponseRedirect
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.decorators.http import require_POST
 from django.templatetags.static import static
+from django.core.files.base import ContentFile
 
 from MAIN.models import *
 
 import datetime
 import requests
 import os
+import base64
+import json
+import uuid
 
 
 # Create your views here.
@@ -132,6 +136,18 @@ class ManageBlogList(LoginRequiredMixin, ListView):
         return context
 
 
+class ManageBlog(LoginRequiredMixin, DetailView):
+    template_name = "secret/manage_blog.html"
+    model = Blog
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+
+        context["title"] = "Manage Blog"
+        context["year"] = datetime.datetime.now().year
+        return context
+
+
 def switch_language(request, language_code):
     if language_code in [lang_code for lang_code, _ in settings.LANGUAGES]:
         translation.activate(language_code)
@@ -231,3 +247,84 @@ def manage_member(request):
     }
 
     return JsonResponse(data, status=200)
+
+
+@require_POST
+def new_blog(request):
+    title = request.POST["title"]
+
+    blog = Blog(title=title, hide=True)
+    blog.save()
+
+    data = {
+        "id" : blog.id
+    }
+
+    return JsonResponse(data, status=200)
+
+
+@require_POST
+def save_blog(request):
+    data = json.loads(request.body.decode('utf-8'))
+    main_img = base64.b64decode(data["main_img"].split(',')[1])
+    detail_img = base64.b64decode(data["detail_img"].split(',')[1])
+
+    blog = Blog.objects.get(id=data["id"])
+    blog.title = data["title"]
+    blog.description = data["description"]
+    blog.date = data["date"]
+    blog.hide = data["hide"]
+    
+    if blog.main_img:
+        os.remove(blog.main_img.path)
+    if blog.detail_img:
+        os.remove(blog.detail_img.path)
+
+    blog.main_img.save(f'{uuid.uuid4()}.{data["main_img"].split(",")[0].split(";")[0].split("/")[-1]}', ContentFile(main_img), save=False)
+    blog.detail_img.save(f'{uuid.uuid4()}.{data["main_img"].split(",")[0].split(";")[0].split("/")[-1]}', ContentFile(detail_img), save=False)
+    blog.save()
+
+    paragraphs_to_delete = Paragraph.objects.filter(blog=blog)
+    images_to_delete = ParagraphImage.objects.filter(paragraph__blog=blog)
+    for image in images_to_delete:
+        os.remove(image.img.path)
+    images_to_delete.delete()
+    paragraphs_to_delete.delete()
+
+    for paragraph_object in data["paragraphs"]:
+        if paragraph_object["type"] == "text":
+            paragraph = Paragraph(
+                blog = blog,
+                is_img = False,
+                text = paragraph_object["text"],
+                order = paragraph_object["order"]
+            )
+            paragraph.save()
+        else:
+            paragraph = Paragraph(
+                blog = blog,
+                is_img = True,
+                order = paragraph_object["order"]
+            )
+            paragraph.save()
+
+            for image_object in paragraph_object["images"]:
+                image = base64.b64decode(image_object['image_data'].split(',')[1])
+                paragraph_image = ParagraphImage(
+                    img = static("imgs/placeholder.jpg"),
+                    paragraph = paragraph,
+                    order = image_object["image_order"]
+                )
+                img_title = f'{uuid.uuid4()}.{image_object["image_data"].split(",")[0].split(";")[0].split("/")[-1]}'
+                paragraph_image.img.save(img_title, ContentFile(image), save=False)
+                paragraph_image.save()
+
+    return JsonResponse({"id" : blog.id}, status=200)
+
+@require_POST
+def delete_blog(request):
+    id = request.POST["id"]
+    blog = Blog.objects.get(id=id)
+    blog.delete()
+
+    return JsonResponse({"status": "success"}, status=200)

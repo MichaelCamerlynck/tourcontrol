@@ -8,8 +8,11 @@
 <div class="px-[3vw] lg:pb-0 pb-[10vh]">
 
     <header class="lg:h-screen lg:pt-[15vh] pt-[10vh]">
-        <img class="w-full lg:h-[70%] h-[50vh] object-cover rounded-3xl" src="{{blog.main_img.url}}" alt="">
-
+        {% if blog.detail_img %}
+        <img class="w-full lg:h-[70%] h-[50vh] object-cover rounded-3xl" src="{{blog.detail_img.url}}" alt="">
+        {% else %}
+        <img class="w-full lg:h-[70%] h-[50vh] object-cover rounded-3xl" src="{% static 'imgs/placeholder.jpg' %}" alt="">
+        {% endif %}
         <div class=" h-[30%] flex flex-col px-[3vw] pt-10">
             <p class="font-bold uppercase font-[Montserrat] mb-3">{{blog.date}}</p>
             <h1 class=" leading-none capitalize lg:text-[4rem] text-[3rem] font-bold font-[Montserrat]">
@@ -18,31 +21,29 @@
         </div>
     </header>
 
-    <div class="lg:px-[10vw] px-[3vw] pb-[20vh] lg:flex lg:flex-row lg:mt-0 mt-10">
+    <div class="lg:px-[10vw] px-[3vw] pb-[20vh] lg:flex lg:flex-row mt-10">
 
         <div class="lg:basis-[5%]"></div>
-        <div class="lg:basis-[70%] lg:text-xl space-y-10" style="font-family: 'Work Sans';">
+        <div class="lg:basis-[70%] lg:text-xl space-y-14" style="font-family: 'Work Sans';">
             {% for paragraph in blog.paragraph_set.all %}
             {% if paragraph.is_img %}
 
-            <div class="lg:flex lg:justify-around lg:space-y-0 space-y-5">
+            <div class="lg:flex lg:justify-around lg:space-y-0 space-y-5 lg:space-x-10">
 
                 {% for img in paragraph.paragraphimage_set.all %}
-                <img class="h-[35vh] w-full object-cover" src="{{img.img.url}}" alt="">
+                <img class="h-[35vh] lg:max-w-[30vw] lg:w-auto w-full object-cover" src="{{img.img.url}}" alt="">
                 {% endfor %}
 
             </div>
 
             {% else %}
 
-            <div class="flex justify-around">
+            <div class="flex">
                 {{paragraph.text}}
             </div>
 
             {% endif %}
             {% endfor %}
-
-
 
         </div>
         <div class="lg:basis-[25%]"></div>

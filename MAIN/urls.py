@@ -13,6 +13,10 @@ urlpatterns = [
     path("home_admin", views.HomeSecret.as_view(), name='home_admin'),
     path("manage_members", views.ManageMembers.as_view(), name='manage_members'),
     path("manage_blogs_list", views.ManageBlogList.as_view(), name='manage_blogs_list'),
+    path("manage_blog/<int:pk>", views.ManageBlog.as_view(), name='manage_blog'),
     path("delete_member", views.delete_member, name='delete_member'),
     path("manage_member", views.manage_member, name='manage_member'),
+    path("new_blog", views.new_blog, name='new_blog'),
+    path("save_blog", views.save_blog, name='save_blog'),
+    path("delete_blog", views.delete_blog, name='delete_blog'),
 ]

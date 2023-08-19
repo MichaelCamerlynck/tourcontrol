@@ -24,7 +24,9 @@
         <div class="lg:flex flex-row lg:mx-[10vw] px-5 pb-16 border-b-2 border-[#BE3455] mb-16 last:border-b-0">
 
             <div class="lg:basis-[40%] lg:mr-[2vw]">
+                {% if blog.main_img %}
                 <img class="object-cover lg:h-[50vh] h-[30vh] w-full" src="{{blog.main_img.url}}" alt="">
+                {% endif %}
             </div>
 
             <div class="lg:basis-[40%] flex flex-col">

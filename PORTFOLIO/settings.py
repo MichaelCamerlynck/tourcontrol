@@ -28,6 +28,7 @@ load_dotenv(dotenv_path)
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = "django-insecure-u+zom1!azed(4byqcrh6#+nc*jmnnal(lqoofcn6h0=45mq8ov"
+DATA_UPLOAD_MAX_MEMORY_SIZE = 209715200
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DEBUG')

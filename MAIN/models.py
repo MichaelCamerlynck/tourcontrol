@@ -12,11 +12,15 @@ class TeamMember(models.Model):
     
 
 class Blog(models.Model):
-    title = models.CharField(max_length=100)
+    title = models.CharField(max_length=100, blank=True)
     date = models.DateField(default=datetime.date.today())
     description = models.TextField(blank=True)
-    main_img = models.ImageField(upload_to="blog")
+    main_img = models.ImageField(upload_to="blog", blank=True)
+    detail_img = models.ImageField(upload_to="blog", blank=True)
     hide = models.BooleanField(default=False)
+
+    class Meta:
+        ordering = ["-date"]
 
     def __str__(self):
         return self.title
@@ -37,11 +41,11 @@ class Paragraph(models.Model):
 
 class ParagraphImage(models.Model):
     img = models.ImageField(upload_to="blog")
-    parargraph = models.ForeignKey(Paragraph, on_delete=models.CASCADE)
+    paragraph = models.ForeignKey(Paragraph, on_delete=models.CASCADE)
     order = models.IntegerField()
 
     class Meta:
         ordering = ["order"]
 
     def __str__(self):
-        return f"Image {self.order} for paragraph order {self.parargraph.order} for {self.parargraph.blog}"
+        return f"Image {self.order} for paragraph order {self.paragraph.order} for {self.paragraph.blog}"

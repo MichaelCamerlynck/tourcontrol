@@ -275,10 +275,10 @@ def save_blog(request):
     blog.date = data["date"]
     blog.hide = data["hide"]
     
-    if blog.main_img:
-        os.remove(blog.main_img.path)
-    if blog.detail_img:
-        os.remove(blog.detail_img.path)
+    # if blog.main_img:
+    #     os.remove(blog.main_img.path)
+    # if blog.detail_img:
+    #     os.remove(blog.detail_img.path)
 
     blog.main_img.save(f'{uuid.uuid4()}.{data["main_img"].split(",")[0].split(";")[0].split("/")[-1]}', ContentFile(main_img), save=False)
     blog.detail_img.save(f'{uuid.uuid4()}.{data["main_img"].split(",")[0].split(";")[0].split("/")[-1]}', ContentFile(detail_img), save=False)
@@ -287,7 +287,8 @@ def save_blog(request):
     paragraphs_to_delete = Paragraph.objects.filter(blog=blog)
     images_to_delete = ParagraphImage.objects.filter(paragraph__blog=blog)
     for image in images_to_delete:
-        os.remove(image.img.path)
+        pass
+        # os.remove(image.img.path)
     images_to_delete.delete()
     paragraphs_to_delete.delete()
 

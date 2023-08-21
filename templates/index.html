@@ -29,11 +29,18 @@
     <div id="content" class="transition-all ease-in-out duration-[1500ms] overflow-hidden">
         {% endif %}
 
-        <header class="h-screen font-[Montserrat]">
+        <header id="indexHeader" class="h-screen font-[Montserrat]">
+
+            <style>
+                #indexHeader {
+                    background-image: url({% static 'imgs/bg.png' %}); 
+                    background-position: center;
+                }
+            </style>
 
             {% include 'base/nav.html' %}
 
-            <div class="h-full flex flex-row items-center">
+            <div class="h-full flex flex-row items-center pt-[25vh]">
                 <div class="lg:ml-[8vw] w-full flex flex-col items-center lg:items-baseline">
 
                     <div class="lg:ml-8 space-x-1 mb-1 lg:hidden">
@@ -56,21 +63,20 @@
                     </div>
 
                     <div class="flex flex-row">
-                        <div class="basis-[30%] text-[#BE3455] lg:text-[3.5rem] text-[1rem] my-auto -rotate-[8deg] text-center hidden lg:block"
-                            style="font-family: 'Shadows Into Light Two';">
-                            <h2 class="uppercase font-bold leading-none">digital</h2>
+                        <!-- <div class=" font-[Montserrat] basis-[30%] text-[#BE3455] lg:text-[2.4rem] text-[1rem] my-auto -rotate-[8deg] text-center hidden lg:block font-[400]"
+                           >
+                            <h2 class="uppercase font-bold leading-none">digital & data</h2>
                             <h2 class="uppercase font-bold leading-none">strategy</h2>
-                        </div>
+                        </div> -->
                         <div class="basis-[70%]">
-                            <h2 class="uppercase xl:text-[9.5rem] lg:text-[7rem] text-[2.5rem] font-bold leading-none pl-[3vw]">
+                            <h2 class="uppercase xl:text-[9.5rem] lg:text-[7rem] text-[2.5rem] font-bold leading-none pl-[10vw]">
                                 consulting
                             </h2>
                         </div>
                     </div>
 
-                    <div class="text-[#BE3455] lg:text-[3.5rem] text-[2rem] my-auto text-center lg:hidden mt-3"
-                        style="font-family: 'Shadows Into Light Two';">
-                        <h2 class="uppercase font-bold leading-none">digital</h2>
+                    <div class="text-[#BE3455] lg:text-[2.5rem] text-[2rem] my-auto text-center mt-3 pl-[50vw] -rotate-[9deg] pt-[9vh]">
+                        <h2 class="uppercase font-bold leading-none">digital & data</h2>
                         <h2 class="uppercase font-bold leading-none">strategy</h2>
                     </div>
 
@@ -80,7 +86,7 @@
 
         </header>
 
-        <div id="howwedoit" class="min-h-screen font-[Montserrat]">
+        <div id="howwedoit" class="min-h-screen font-[Montserrat] justify-center flex flex-col">
 
             <div class="flex flex-col justify-center items-center h-full">
                 <h2 class="uppercase font-bold lg:text-[4rem] text-[1.8rem] text-center leading-[1]">
@@ -102,14 +108,14 @@
 
                 <div class="border-l-2 border-[#BE3455] h-[30vh] mt-10"></div>
 
-                <button class="uppercase font-bold mt-10" id="howWeDoIt">
+                <a href="#mottos" class="uppercase font-bold mt-10" id="howWeDoIt">
                     {% trans "discover how we do it" %}
-                </button>
+                </a>
             </div>
 
         </div>
 
-        <div class="h-screen font-[Montserrat] bg-[#091830] hidden lg:block">
+        <div id="mottos" class="h-screen font-[Montserrat] bg-[#091830] hidden lg:block">
             <div class="flex justify-center items-center h-full">
 
                 <div class="flex flex-row px-[17vw]">
@@ -121,7 +127,7 @@
                                     class="w-full h-full border-[#BE3455] border-b-2 border-t-2 flex pt-[0.875rem] button-desc"
                                     data-text="versitile">
                                     <div class="translate-x-6 flex transition-transform duration-700">
-                                        <i class="fa-solid fa-chevron-right my-auto text-xl hidden mr-3"></i>
+                                        <i class="fa-solid fa-chevron-right my-auto text-xl hidden mr-3 animate-pulse text-[#BE3455]"></i>
                                         <i class="fa-solid fa-arrow-right mr-3 my-auto text-2xl"></i>
                                         <p class="uppercase">{% trans "Versitile" %}</p>
                                     </div>
@@ -132,7 +138,7 @@
                                 <button class="w-full h-full border-[#BE3455] border-b-2 flex button-desc"
                                     data-text="integrated">
                                     <div class="flex transition-transform duration-700">
-                                        <i class="fa-solid fa-chevron-right my-auto text-xl mr-3"></i>
+                                        <i class="fa-solid fa-chevron-right my-auto text-xl mr-3 animate-pulse text-[#BE3455]"></i>
                                         <i class="fa-solid fa-arrow-right mr-3 my-auto text-2xl hidden"></i>
                                         <p class="uppercase">{% trans "Integrated" %}</p>
                                     </div>
@@ -143,7 +149,7 @@
                                 <button class="w-full h-full border-[#BE3455] border-b-2 flex button-desc"
                                     data-text="empowered">
                                     <div class="flex transition-transform duration-700">
-                                        <i class="fa-solid fa-chevron-right my-auto text-xl mr-3"></i>
+                                        <i class="fa-solid fa-chevron-right my-auto text-xl mr-3 animate-pulse text-[#BE3455]"></i>
                                         <i class="fa-solid fa-arrow-right mr-3 my-auto text-2xl hidden"></i>
                                         <p class="uppercase">{% trans "Empowered" %}</p>
                                     </div>
@@ -280,11 +286,11 @@
         </div>
 
         <div class="h-screen flex flex-col justify-center items-center lg:mt-[20vh] mt-[10vh]">
-            <h2 class="uppercase font-[800] lg:text-[9rem] text-[2.5rem] leading-none">
+            <a href="{% url 'blog' %}" class="uppercase font-[800] lg:text-[9rem] text-[2.5rem] leading-none">
                 <span class="block">{% trans "Witness the" %} </span>
                 <span class="block -ml-[8vw] text-[#BE3455] italic">{% trans "Success" %}</span>
                 <span class="block">{% trans "Stories" %}</span>
-            </h2>
+            </a>
 
             <div class="flex lg:flex-row mt-10 lg:px-[15vw]">
                 <div class="lg:basis-1/2"></div>
@@ -310,7 +316,7 @@
             </h3>
 
             <button id="contactUs"
-                class="uppercase mt-10 px-5 py-4 lg:text-3xl flex justify-between rounded-[3rem] lg:w-[17vw]">
+                class="contactUs uppercase mt-10 px-5 py-4 lg:text-3xl flex justify-between rounded-[3rem] lg:w-[17vw]">
                 <p class="font-[600] tracking-wider my-auto">{% trans "contact us" %}</p>
                 <div class="hidden lg:block my-auto">
                     <span id="circleContact"

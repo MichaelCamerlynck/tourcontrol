@@ -275,10 +275,16 @@ def save_blog(request):
     blog.date = data["date"]
     blog.hide = data["hide"]
     
-    # if blog.main_img:
-    #     os.remove(blog.main_img.path)
-    # if blog.detail_img:
-    #     os.remove(blog.detail_img.path)
+    if blog.main_img:
+        try:
+            os.remove(blog.main_img.path)
+        except FileNotFoundError:
+            print("file not found")
+    if blog.detail_img:
+        try:
+            os.remove(blog.detail_img.path)
+        except FileNotFoundError:
+            print("file not found")
 
     blog.main_img.save(f'{uuid.uuid4()}.{data["main_img"].split(",")[0].split(";")[0].split("/")[-1]}', ContentFile(main_img), save=False)
     blog.detail_img.save(f'{uuid.uuid4()}.{data["main_img"].split(",")[0].split(";")[0].split("/")[-1]}', ContentFile(detail_img), save=False)
@@ -287,8 +293,10 @@ def save_blog(request):
     paragraphs_to_delete = Paragraph.objects.filter(blog=blog)
     images_to_delete = ParagraphImage.objects.filter(paragraph__blog=blog)
     for image in images_to_delete:
-        pass
-        # os.remove(image.img.path)
+        try:
+            os.remove(image.img.path)
+        except FileNotFoundError:
+            print("file not found")
     images_to_delete.delete()
     paragraphs_to_delete.delete()
 
@@ -321,6 +329,7 @@ def save_blog(request):
                 paragraph_image.save()
 
     return JsonResponse({"id" : blog.id}, status=200)
+
 
 @require_POST
 def delete_blog(request):

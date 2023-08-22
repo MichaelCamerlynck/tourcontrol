@@ -30,6 +30,7 @@ class IndexView(TemplateView):
         context = super().get_context_data(**kwargs)
 
         context["title"] = "Home | Tourcontrol Consulting"
+        context['current_url'] = self.request.build_absolute_uri()
         context["year"] = datetime.datetime.now().year
         context["splash"] = True
         context["members"] = TeamMember.objects.all()
@@ -44,6 +45,7 @@ class IndexHomeView(TemplateView):
         context = super().get_context_data(**kwargs)
 
         context["title"] = "Home | Tourcontrol Consulting"
+        context['current_url'] = self.request.build_absolute_uri()
         context["year"] = datetime.datetime.now().year
         context["splash"] = False
         context["members"] = TeamMember.objects.all()
@@ -58,6 +60,7 @@ class Contact(TemplateView):
         context = super().get_context_data(**kwargs)
 
         context["title"] = "Contact | Tourcontrol Consulting"
+        context['current_url'] = self.request.build_absolute_uri()
         context["year"] = datetime.datetime.now().year
 
         return context
@@ -77,6 +80,7 @@ class BlogListView(ListView):
         context = super().get_context_data(**kwargs)
 
         context["title"] = "Blogs | Tourcontrol Consulting"
+        context['current_url'] = self.request.build_absolute_uri()
         context["year"] = datetime.datetime.now().year
         return context
     
@@ -89,6 +93,8 @@ class BlogDetailView(DetailView):
         context = super().get_context_data(**kwargs)
 
         context["title"] = "Tourcontrol Consulting Blog"
+        context['current_url'] = self.request.build_absolute_uri()
+        context["blog_img"] = self.request.build_absolute_uri(self.get_object().main_img.url)
         context["year"] = datetime.datetime.now().year
         return context
 
@@ -101,6 +107,7 @@ class HomeSecret(LoginRequiredMixin, TemplateView):
         context = super().get_context_data(**kwargs)
 
         context["title"] = "Admin | Tourcontrol Consulting"
+        context['current_url'] = self.request.build_absolute_uri()
         context["year"] = datetime.datetime.now().year
 
         return context
@@ -116,6 +123,7 @@ class ManageMembers(LoginRequiredMixin, ListView):
         context = super().get_context_data(**kwargs)
 
         context["title"] = "Manage Memebers | Tourcontrol Consulting"
+        context['current_url'] = self.request.build_absolute_uri()
         context["year"] = datetime.datetime.now().year
 
         return context
@@ -131,6 +139,7 @@ class ManageBlogList(LoginRequiredMixin, ListView):
         context = super().get_context_data(**kwargs)
 
         context["title"] = "Manage Blogs List | Tourcontrol Consulting"
+        context['current_url'] = self.request.build_absolute_uri()
         context["year"] = datetime.datetime.now().year
 
         return context
@@ -144,6 +153,7 @@ class ManageBlog(LoginRequiredMixin, DetailView):
         context = super().get_context_data(**kwargs)
 
         context["title"] = "Manage Blog"
+        context['current_url'] = self.request.build_absolute_uri()
         context["year"] = datetime.datetime.now().year
         return context
 

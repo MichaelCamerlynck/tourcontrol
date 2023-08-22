@@ -4,6 +4,9 @@
 {% block body_block %}
 
 {% include 'base/nav.html' %}
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v17.0"
+    nonce="sehFFwGj"></script>
 
 <div class="px-[3vw] lg:pb-0 pb-[10vh]">
 
@@ -11,9 +14,46 @@
         {% if blog.detail_img %}
         <img class="w-full lg:h-[70%] h-[50vh] object-cover rounded-3xl" src="{{blog.detail_img.url}}" alt="">
         {% else %}
-        <img class="w-full lg:h-[70%] h-[50vh] object-cover rounded-3xl" src="{% static 'imgs/placeholder.jpg' %}" alt="">
+        <img class="w-full lg:h-[70%] h-[50vh] object-cover rounded-3xl" src="{% static 'imgs/placeholder.jpg' %}"
+            alt="">
         {% endif %}
         <div class=" h-[30%] flex flex-col px-[3vw] pt-10">
+
+            <ul class="lg:flex space-x-1 lg:space-y-0 space-y-1 lg:w-full w-[30vw] justify-end lg:mb-0 mb-3 font-[Montserrat]">
+                <li>
+                    <button class="rounded-3xl py-1 px-4 text-sm bg-[#BE3455]" id="copyButton">
+                        <i class="fa-solid fa-copy"></i> Copy Link
+                    </button>
+                </li>
+
+                <li>
+                    <div class="text-sm rounded-3xl py-1 px-3 bg-[#3b5998]" data-href="{{current_url}}" data-layout=""
+                        data-size="">
+                        <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{current_url}}">
+                            <i class="fa-brands fa-facebook-f text-xs"></i> Facebook
+                        </a>
+
+                    </div>
+                </li>
+
+                <li>
+                    <div class="text-sm rounded-3xl py-1 px-3 bg-[#0A66C2]">
+                        <a target="_blank"
+                            href="https://linkedin.com/shareArticle?url={{current_url}}&title={{blog.title}}">
+                            <i class="fa-brands fa-linkedin-in"></i> LinkedIn
+                        </a>
+                    </div>
+                </li>
+
+                <li>
+                    <a href="{{ current_url }}" class="twitter-share-button" data-size="large"
+                        data-text="Check out this blog!" data-show-count="false">
+                        Tweet
+                    </a>
+                    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                </li>
+            </ul>
+
             <p class="font-bold uppercase font-[Montserrat] mb-3">{{blog.date}}</p>
             <h1 class=" leading-none capitalize lg:text-[4rem] text-[3rem] font-bold font-[Montserrat]">
                 {{blog.title}}
@@ -50,5 +90,19 @@
 
     </div>
 </div>
+
+<script>
+    document.getElementById('copyButton').addEventListener('click', function () {
+        var textToCopy = "{{ current_url }}"; // Replace with the link you want to copy
+        var tempInput = document.createElement("input");
+        tempInput.style = "position: absolute; left: -1000px; top: -1000px";
+        tempInput.value = textToCopy;
+        document.body.appendChild(tempInput);
+        tempInput.select();
+        document.execCommand("copy");
+        document.body.removeChild(tempInput);
+        alert("Link copied to clipboard: " + textToCopy);
+    });
+</script>
 
 {% endblock %}

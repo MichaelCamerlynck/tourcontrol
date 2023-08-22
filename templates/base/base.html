@@ -12,6 +12,15 @@
     <!-- <link rel="shortcut icon" type="image/png" href="{% static 'favicon.webp' %}" /> -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
+    <meta property="og:url"           content="{{ current_url }}" />
+    <meta property="og:type"          content="website" />
+    <meta property="og:title"         content="Tourcontrol Consulting" />
+    <meta property="og:description"   content="Your description" />
+    {% if blog_img %}
+    <meta property="og:image"         content="{{ blog_img }}" />
+    {% endif %}
+    </head>
+
 
     {% tailwind_css %}
     <title>{{ title }}</title>

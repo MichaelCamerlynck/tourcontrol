@@ -34,6 +34,8 @@ class IndexView(TemplateView):
         context["year"] = datetime.datetime.now().year
         context["splash"] = True
         context["members"] = TeamMember.objects.all()
+        context["description"] = "Tourcontrol Consulting"
+        context["title"] = "Tourcontrol Consulting"
 
         return context
    
@@ -49,6 +51,8 @@ class IndexHomeView(TemplateView):
         context["year"] = datetime.datetime.now().year
         context["splash"] = False
         context["members"] = TeamMember.objects.all()
+        context["description"] = "Tourcontrol Consulting"
+        context["title"] = "Tourcontrol Consulting"
 
         return context
    
@@ -62,6 +66,8 @@ class Contact(TemplateView):
         context["title"] = "Contact | Tourcontrol Consulting"
         context['current_url'] = self.request.build_absolute_uri()
         context["year"] = datetime.datetime.now().year
+        context["description"] = "Tourcontrol Consulting"
+        context["title"] = "Tourcontrol Consulting"
 
         return context
 
@@ -82,6 +88,8 @@ class BlogListView(ListView):
         context["title"] = "Blogs | Tourcontrol Consulting"
         context['current_url'] = self.request.build_absolute_uri()
         context["year"] = datetime.datetime.now().year
+        context["description"] = "Tourcontrol Consulting"
+        context["title"] = "Tourcontrol Consulting"
         return context
     
 
@@ -96,6 +104,9 @@ class BlogDetailView(DetailView):
         context['current_url'] = self.request.build_absolute_uri()
         context["blog_img"] = self.request.build_absolute_uri(self.get_object().main_img.url)
         context["year"] = datetime.datetime.now().year
+        context["title"] = self.get_object().title
+        context["description"] = self.get_object().description
+        context["title"] = "Tourcontrol Consulting"
         return context
 
 
@@ -109,6 +120,8 @@ class HomeSecret(LoginRequiredMixin, TemplateView):
         context["title"] = "Admin | Tourcontrol Consulting"
         context['current_url'] = self.request.build_absolute_uri()
         context["year"] = datetime.datetime.now().year
+        context["description"] = "Tourcontrol Consulting"
+        context["title"] = "Tourcontrol Consulting"
 
         return context
     
@@ -125,6 +138,8 @@ class ManageMembers(LoginRequiredMixin, ListView):
         context["title"] = "Manage Memebers | Tourcontrol Consulting"
         context['current_url'] = self.request.build_absolute_uri()
         context["year"] = datetime.datetime.now().year
+        context["description"] = "Tourcontrol Consulting"
+        context["title"] = "Tourcontrol Consulting"
 
         return context
     
@@ -141,6 +156,7 @@ class ManageBlogList(LoginRequiredMixin, ListView):
         context["title"] = "Manage Blogs List | Tourcontrol Consulting"
         context['current_url'] = self.request.build_absolute_uri()
         context["year"] = datetime.datetime.now().year
+        context["description"] = "Tourcontrol Consulting"
 
         return context
 
@@ -155,6 +171,7 @@ class ManageBlog(LoginRequiredMixin, DetailView):
         context["title"] = "Manage Blog"
         context['current_url'] = self.request.build_absolute_uri()
         context["year"] = datetime.datetime.now().year
+        context["description"] = "Tourcontrol Consulting"
         return context
 
 
